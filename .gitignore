@@ -7,6 +7,26 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore Simplecov
+/coverage/
+coverage/
+.coverage
+.coverage.*
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+# General
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+.idea
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
