@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'Users API | Create' do
   describe 'User Create' do
     context('Happy Path') do
-      let!(:users_creation)
+      let!(:users_creation) { create_list(:user, 5) }
       it 'creates a user with given params' do
         get api_v1_users_path
 
@@ -24,7 +24,7 @@ RSpec.describe 'Users API | Create' do
 
         users_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(users_response).to eq []
+        expect(users_response).to eq data: []
       end
     end
   end
