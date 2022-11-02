@@ -13,7 +13,7 @@ RSpec.describe 'Users API | Create' do
 
         users_response = JSON.parse(response.body, symbolize_names: true)
 
-        users_response.each { |user| user_response_attr(user) }
+        users_response[:data].each { |user| user_response_attr(user) }
       end
     end
     context('Sad Path') do
@@ -33,5 +33,13 @@ end
 private
 
 def user_response_attr(user)
-  binding.pry
+  expect(user[:id]).to be_an String
+  expect(user[:type]).to eq 'user'
+  expect(user[:attributes]).to be_an Hash
+  expect(user[:attributes].count).to eq 5
+  expect(user.dig(:attributes, :full_name)).to be_an String
+  expect(user.dig(:attributes, :first_name)).to be_an String
+  expect(user.dig(:attributes, :last_name)).to be_an String
+  expect(user.dig(:attributes, :email)).to be_an String
+  expect(user.dig(:attributes, :image)).to be_an String
 end
