@@ -24,7 +24,7 @@ RSpec.describe 'Users API | Create' do
         expect(response).to have_http_status 201
 
         user_response = JSON.parse(response.body, symbolize_names: true)
-        binding.pry
+
         expect(user_response).to eq user_parsed_body
       end
     end
