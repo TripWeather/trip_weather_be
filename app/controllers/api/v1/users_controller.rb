@@ -2,6 +2,10 @@
 
 
 class Api::V1::UsersController < ApplicationController
+  def index
+    render json: UserSerializer.new(User.all), status: 200
+  end
+
   def create
     user = User.find_or_create_by!(email: user_params[:email])
     user.update(uid: user_params[:uid], token: user_params[:token], full_name: user_params[:name],
