@@ -1,24 +1,48 @@
-# README
+# Back End Repository for Trip Weather
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Schema / Database
 
-Things you may want to cover:
+<p align="center">
+  <img src="https://github.com/TripWeather/.github/blob/main/profile/assets/Database.png?raw=true" />
+</p>
 
-* Ruby version
+## Available API End Points
 
-* System dependencies
+### `GET  /api/v1/users` or `GET https://trip-weather-2022.herokuapp.com/api/v1/users`
 
-* Configuration
+Returns all the users with their attributes.
 
-* Database creation
+```json
+{
+}
+```
+### GET
 
-* Database initialization
+## Local Setup
 
-* How to run the test suite
+This project requires Ruby 2.7.x
 
-* Services (job queues, cache servers, search engines, etc.)
+* Fork this repository
+* Clone your fork
+* From the command line, install gems and set up your DB:
+    * `bundle`
+    * `rails db:create`
+* Run the test suite with `bundle exec rspec`.
+* Run your development server with `rails s` to see the app in action.
 
-* Deployment instructions
+## Versions
 
-* ...
+- Ruby 2.7.x
+
+- Rails 5.2.6
+
+## Contributors
+[@eriggs0207](https://github.com/eriggs0207)
+
+[@cece-132](https://github.com/cece-132)
+
+[@Dominicod](https://github.com/Dominicod)
+
+[@stephenfabian](https://github.com/stephenfabian)
+
+[@SandyyMarie](https://github.com/SandyyMarie)
