@@ -3,7 +3,7 @@
 ## Schema / Database
 
 <p align="center">
-  <img src="https://github.com/TripWeather/.github/blob/main/profile/assets/Database.png?raw=true" />
+  <img src="" />
 </p>
 
 ## Available API End Points
