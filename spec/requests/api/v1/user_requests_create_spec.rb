@@ -29,7 +29,7 @@ RSpec.describe 'Users API | Create' do
       end
     end
     context('Edge Path') do
-      it 'returns a status 422 if email is missing' do
+      it 'returns a status 400 if no params passed' do
         headers = { CONTENT_TYPE: 'application/json' }
 
         post api_v1_users_path, headers: headers, params: JSON.generate(user: {})
@@ -38,7 +38,19 @@ RSpec.describe 'Users API | Create' do
 
         error_response = JSON.parse(response.body, symbolize_names: true)
 
-        expect(error_response).to eq error_parsed_body
+        expect(error_response).to eq bad_request_parsed_body
+      end
+
+      it 'returns a status 422 if required param is not passed' do
+        headers = { CONTENT_TYPE: 'application/json' }
+
+        post api_v1_users_path, headers: headers, params: JSON.generate(user: { full_name: 'Bob Short' })
+
+        expect(response).to have_http_status 422
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(error_response).to eq unprocessable_parsed_body
       end
     end
   end
@@ -58,7 +70,12 @@ def user_parsed_body
   }
 end
 
-def error_parsed_body
+def bad_request_parsed_body
   { message: 'your query could not be completed',
     errors: [{ status: '400', title: 'Bad Request', detail: 'param is missing or the value is empty: user' }] }
+end
+
+def unprocessable_parsed_body
+  { errors: [{ detail: ["Email can't be blank"], status: '422', title: 'Unprocessable Entity' }], 
+    message: 'your query could not be completed' }
 end
