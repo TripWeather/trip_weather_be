@@ -7,7 +7,7 @@ RSpec.describe 'Users API | Create' do
     context('Happy Path') do
       let(:user) do
         {
-          name: 'Bob Short',
+          full_name: 'Bob Short',
           email: 'bobshort@gmail.com',
           first_name: 'Bob',
           last_name: 'Short',
