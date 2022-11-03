@@ -4,11 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Trips API | Index' do
   describe 'Trip Index' do
-    let!(:load_obj) do
-      trip_initialize_has_many('1000', 3)
-      trip_initialize_has_many('1000', 2)
-      trip_initialize_has_many('1000')
-    end
+    let!(:load_obj) { 3.times { |i| trip_initialize_has_many('1000', i) } }
     context('Happy Path') do
       it 'returns all trips' do
         get api_v1_trips_path('1000')
