@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route/&from=Clarendon+Blvd,+Arlington,+VA&to=2400+S+Glebe+Rd,+Arlington,+VA?key=tM6CeX35H3IGWTteKGTzK7yGGkCMuj17
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Thu, 03 Nov 2022 22:15:16 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '500'
+      Set-Cookie:
+      - JSESSIONID=514628400FBB66FD9525C816B4A718A2; Path=/directions; HttpOnly
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Last-Modified:
+      - Thu, 03 Nov 2022 22:15:16 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      X-Vz-Migration-Api:
+      - 'false'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Status:
+      - success
+      Transactionweight:
+      - '1'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MCwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDAsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIkVycm9yIHByb2Nlc3Npbmcgcm91dGUgcmVxdWVzdDogIiwiRXJyb3IgcGFyc2luZyBKU09OIGZyb20gUmVxdWVzdDogQSBKU09OT2JqZWN0IHRleHQgbXVzdCBiZWdpbiB3aXRoICd7JyBhdCBjaGFyYWN0ZXIgMCBvZiAsICBQbGVhc2Ugc2VlIHRoZSBkb2N1bWVudGF0aW9uIGZvciB0aGUgRGlyZWN0aW9ucyBTZXJ2aWNlIGF0IGh0dHA6Ly93d3cubWFwcXVlc3RhcGkuY29tL2RpcmVjdGlvbnMvIGZvciBkZXRhaWxzIG9uIGNvcnJlY3RseSBmb3JtYXR0aW5nIHJlcXVlc3RzLiJdfX0=
+  recorded_at: Thu, 03 Nov 2022 22:15:16 GMT
+recorded_with: VCR 6.1.0
