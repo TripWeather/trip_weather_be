@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "stops", force: :cascade do |t|
     t.bigint "trip_id"
     t.bigint "address_id"
-    t.string "type"
+    t.string "type_of_stop"
     t.index ["address_id"], name: "index_stops_on_address_id"
     t.index ["trip_id"], name: "index_stops_on_trip_id"
   end
