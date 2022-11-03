@@ -8,7 +8,7 @@ FactoryBot.define do
   end
 end
 
-def trip_initialize(stops_count = 1, trip_count = 1)
+def trip_initialize_has_many(trip_count, stops_count = 1)
   trip_count.times do
     FactoryBot.create(:trip) do |trip|
       FactoryBot.create(:start_stop, trip: trip)
