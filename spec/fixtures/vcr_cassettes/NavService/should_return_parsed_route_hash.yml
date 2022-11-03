@@ -2,7 +2,160 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.mapquestapi.com/directions/v2/route/&from=Clarendon+Blvd,+Arlington,+VA&to=2400+S+Glebe+Rd,+Arlington,+VA?key=tM6CeX35H3IGWTteKGTzK7yGGkCMuj17
+    uri: http://api.positionstack.com/v1/forward?access_key=1d4b462a0581418e3bc5e6454245fbfe&query=200%20E%20Colfax%20Ave,%20Denver,%20CO%2080203
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 Nov 2022 23:16:39 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip
+      Cache-Control:
+      - no-cache, private
+      X-Apilayer-Transaction-Id:
+      - b04bb79f-cbae-46e6-b480-e35c5cd436d0
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '25000'
+      X-Quota-Remaining:
+      - '24967'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '2.388'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=6%2B79LeoWK4tnkRnJ11ptvZFr1Gj8T2kXHX5k2qg6Q4WlicdHHFF2zBVNLFjyvoYAyZj49sQxoB65PDnf3VUnOXCu5cATRfDXmt6pifsODc4n4xZDjP%2BxQFutipxB8qLiWSGHiJM15%2BI%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7648d191d9c1e936-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"latitude":39.739884,"longitude":-104.984571,"type":"address","name":"200
+        E Colfax Ave","number":"200","postal_code":"80203","street":"E Colfax Ave","confidence":1,"region":"Colorado","region_code":"CO","county":"Denver
+        County","locality":"Denver","administrative_area":null,"neighbourhood":"Capitol
+        Hill","country":"United States","country_code":"USA","continent":"North America","label":"200
+        E Colfax Ave, Denver, CO, USA"},{"latitude":39.739238,"longitude":-104.984911,"type":"address","name":"200
+        East Colfax Avenue","number":"200","postal_code":"80203","street":"East Colfax
+        Avenue","confidence":1,"region":"Colorado","region_code":"CO","county":"Denver
+        County","locality":"Denver","administrative_area":null,"neighbourhood":"Capitol
+        Hill","country":"United States","country_code":"USA","continent":"North America","label":"200
+        East Colfax Avenue, Denver, CO, USA"}]}'
+  recorded_at: Thu, 03 Nov 2022 23:16:39 GMT
+- request:
+    method: get
+    uri: http://api.positionstack.com/v1/forward?access_key=1d4b462a0581418e3bc5e6454245fbfe&query=350%20State%20St,%20Salt%20Lake%20City,%20UT%2084103
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 03 Nov 2022 23:16:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip
+      Cache-Control:
+      - no-cache, private
+      X-Apilayer-Transaction-Id:
+      - ac0c9138-8711-4d94-bc40-6c94a7ecd166
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '25000'
+      X-Quota-Remaining:
+      - '24966'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '1.958'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=fQBcoXiv12OKa%2FvfT9GXRytFF6qxVE8KuvD4t192PwlQYfoy338HCf%2B%2BmUGypiHEcam8wwXXiLUbSelEsK%2FnhWcqY4TNSzuw%2BApzccsS9W0%2BjqPi0%2B4ceUOkkTuGvtLqFCEChwgeUww%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7648d1a1c8ff2897-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"latitude":40.777424,"longitude":-111.888063,"type":"address","name":"350
+        State Street","number":"350","postal_code":"84103","street":"State Street","confidence":1,"region":"Utah","region_code":"UT","county":"Salt
+        Lake County","locality":"Salt Lake City","administrative_area":null,"neighbourhood":"Capitol","country":"United
+        States","country_code":"USA","continent":"North America","label":"350 State
+        Street, Salt Lake City, UT, USA","map_url":"https:\/\/map.positionstack.com\/export\/embed.html?bbox=-111.887563,40.777924,-111.888563,40.776924\u0026layer=mapnik\u0026marker=40.777424,-111.888063"},{"latitude":40.777217,"longitude":-111.888202,"type":"address","name":"350
+        N State St","number":"350","postal_code":"84103","street":"N State St","confidence":1,"region":"Utah","region_code":"UT","county":"Salt
+        Lake County","locality":"Salt Lake City","administrative_area":null,"neighbourhood":"Capitol","country":"United
+        States","country_code":"USA","continent":"North America","label":"350 N State
+        St, Salt Lake City, UT, USA","map_url":"https:\/\/map.positionstack.com\/export\/embed.html?bbox=-111.887702,40.777717,-111.888702,40.776717\u0026layer=mapnik\u0026marker=40.777217,-111.888202"},{"latitude":40.761544,"longitude":-111.88852,"type":"address","name":"350
+        S State St","number":"350","postal_code":"84111","street":"S State St","confidence":1,"region":"Utah","region_code":"UT","county":"Salt
+        Lake County","locality":"Salt Lake City","administrative_area":null,"neighbourhood":"Clark
+        Learning Office Center","country":"United States","country_code":"USA","continent":"North
+        America","label":"350 S State St, Salt Lake City, UT, USA","map_url":"https:\/\/map.positionstack.com\/export\/embed.html?bbox=-111.88802,40.762044,-111.88902,40.761044\u0026layer=mapnik\u0026marker=40.761544,-111.88852"}]}'
+  recorded_at: Thu, 03 Nov 2022 23:16:41 GMT
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route&from=39.739884,-104.984571&to=40.777424,40.777424?key=tM6CeX35H3IGWTteKGTzK7yGGkCMuj17
     body:
       encoding: US-ASCII
       string: ''
@@ -19,17 +172,17 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Thu, 03 Nov 2022 22:15:16 GMT
+      - Thu, 03 Nov 2022 23:16:41 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
       - '500'
       Set-Cookie:
-      - JSESSIONID=514628400FBB66FD9525C816B4A718A2; Path=/directions; HttpOnly
+      - JSESSIONID=7A1D9753F8E8C3095C83ADB23EB88975; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Thu, 03 Nov 2022 22:15:16 GMT
+      - Thu, 03 Nov 2022 23:16:41 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -48,5 +201,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MCwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDAsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIkVycm9yIHByb2Nlc3Npbmcgcm91dGUgcmVxdWVzdDogIiwiRXJyb3IgcGFyc2luZyBKU09OIGZyb20gUmVxdWVzdDogQSBKU09OT2JqZWN0IHRleHQgbXVzdCBiZWdpbiB3aXRoICd7JyBhdCBjaGFyYWN0ZXIgMCBvZiAsICBQbGVhc2Ugc2VlIHRoZSBkb2N1bWVudGF0aW9uIGZvciB0aGUgRGlyZWN0aW9ucyBTZXJ2aWNlIGF0IGh0dHA6Ly93d3cubWFwcXVlc3RhcGkuY29tL2RpcmVjdGlvbnMvIGZvciBkZXRhaWxzIG9uIGNvcnJlY3RseSBmb3JtYXR0aW5nIHJlcXVlc3RzLiJdfX0=
-  recorded_at: Thu, 03 Nov 2022 22:15:16 GMT
+  recorded_at: Thu, 03 Nov 2022 23:16:41 GMT
 recorded_with: VCR 6.1.0
