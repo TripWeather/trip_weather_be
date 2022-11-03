@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_221_101_232_225) do
+ActiveRecord::Schema.define(version: 2022_11_03_155620) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'uid'
-    t.string 'token'
-    t.string 'email'
-    t.string 'full_name'
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'image'
+  create_table 'trips', force: :cascade do |t|
+    t.integer 'uid'
+    t.string 'name'
+    t.string 'start_point'
+    t.string 'end_point'
+    t.string 'start_time'
+    t.string 'departure_date'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
+
 end
