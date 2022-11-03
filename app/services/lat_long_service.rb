@@ -5,7 +5,6 @@ class LatLongService
         url: 'http://api.positionstack.com/v1/',
         params: {access_key: ENV['LAT_LONG_API']}
       )
-
   end
 
   def self.parse(api_data)
@@ -15,7 +14,5 @@ class LatLongService
   def self.address_to_coord(address)
     response = connection.get("forward?query=#{address}")
     parse(response)
-# require 'pry'; binding.pry
-  end
-  
+  end 
 end
