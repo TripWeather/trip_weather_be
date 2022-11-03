@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,19 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_221_101_232_225) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+ActiveRecord::Schema.define(version: 3) do
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'uid'
-    t.string 'token'
-    t.string 'email'
-    t.string 'full_name'
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'image'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "stops", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.bigint "address_id"
+    t.string "type_of_stop"
+    t.index ["address_id"], name: "index_stops_on_address_id"
+    t.index ["trip_id"], name: "index_stops_on_trip_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "uid"
+    t.string "name"
+    t.datetime "departure_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "stops", "addresses"
+  add_foreign_key "stops", "trips"
 end

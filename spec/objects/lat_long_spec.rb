@@ -11,7 +11,6 @@ RSpec.describe LatLong do
   let(:object) { LatLong.new(response_hash) }
 
   it 'instantiates' do
-
     expect(object).to be_an_instance_of(LatLong)
   end
 
