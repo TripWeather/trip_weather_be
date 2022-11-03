@@ -8,10 +8,12 @@ FactoryBot.define do
   end
 end
 
-def trip_initialize(stops_count = 1)
-  FactoryBot.create(:trip) do |trip|
-    FactoryBot.create(:start_stop, trip: trip)
-    FactoryBot.create_list(:stop, stops_count, trip: trip)
-    FactoryBot.create(:end_stop, trip: trip)
+def trip_initialize(stops_count = 1, trip_count = 1)
+  trip_count.times do
+    FactoryBot.create(:trip) do |trip|
+      FactoryBot.create(:start_stop, trip: trip)
+      FactoryBot.create_list(:stop, stops_count, trip: trip)
+      FactoryBot.create(:end_stop, trip: trip)
+    end
   end
 end
