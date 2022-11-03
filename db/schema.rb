@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "uid"
     t.string "name"
     t.datetime "departure_date"
+    t.datetime "arrival_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

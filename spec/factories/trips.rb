@@ -5,6 +5,7 @@ FactoryBot.define do
     uid { Faker::Number.number(digits: 10).to_s }
     name { Faker::Movies::StarWars.planet }
     departure_date { Faker::Time.forward(days: 5, period: :morning) }
+    arrival_date { Faker::Time.forward(days: 10, period: :morning) }
   end
 end
 

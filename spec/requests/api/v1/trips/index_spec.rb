@@ -8,6 +8,7 @@ RSpec.describe 'Trips API | Index' do
     context('Happy Path') do
       it 'returns all trips' do
         get api_v1_trips_path('1000')
+        binding.pry
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
