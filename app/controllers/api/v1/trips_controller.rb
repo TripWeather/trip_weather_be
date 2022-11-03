@@ -1,4 +1,8 @@
 # frozen_string_literal: true
 
-class Api::V1::TripsController < ApplicationController
+module Api
+  module V1
+    class TripsController < ApplicationController
+    end
+  end
 end
