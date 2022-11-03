@@ -10,20 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_03_155620) do
+ActiveRecord::Schema.define(version: 3) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'trips', force: :cascade do |t|
-    t.integer 'uid'
-    t.string 'name'
-    t.string 'start_point'
-    t.string 'end_point'
-    t.string 'start_time'
-    t.string 'departure_date'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "addresses", force: :cascade do |t|
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
+  create_table "stops", force: :cascade do |t|
+    t.bigint "trip_id"
+    t.string "type"
+    t.bigint "address_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_stops_on_address_id"
+    t.index ["trip_id"], name: "index_stops_on_trip_id"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "uid"
+    t.string "name"
+    t.datetime "departure_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "stops", "addresses"
+  add_foreign_key "stops", "trips"
 end
