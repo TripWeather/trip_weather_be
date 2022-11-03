@@ -6,16 +6,15 @@ RSpec.describe 'Trips API | Index' do
   describe 'Trip Index' do
     let!(:load_obj) { 3.times { |i| trip_initialize_has_many('1000', i) } }
     context('Happy Path') do
-      it 'returns all trips' do
+      it 'returns all trips associated to :uid' do
         get api_v1_trips_path('1000')
-        binding.pry
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
         expect(trips_response[:data].count).to eq 3
       end
 
-      it 'all trip values are correct types' do
+      it 'all :uid associated trip values are correct types' do
         get api_v1_trips_path('1000')
         expect(response).to have_http_status(200)
 
@@ -25,30 +24,22 @@ RSpec.describe 'Trips API | Index' do
     end
 
     context('Sad Path') do
-      it 'returns empty array if user has no trips' do
-        get api_v1_trips_path('1000')
+      it 'returns empty array if :uid has no trips' do
+        get api_v1_trips_path('2000')
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
         expect(trips_response).to eq data: []
       end
     end
-
-    context('Edge Case') do
-      it 'returns an error if user params do not exist' do
-        get api_v1_trips_path('1000')
-        expect(response).to have_http_status(404)
-
-        trips_response = JSON.parse(response.body, symbolize_names: true)
-        expect(trips_response).to eq 'test'
-      end
-    end
   end
 end
 
 def trip_type_check(trip)
-  expect(trip[:uid]).to be_an String
-  expect(trip[:name]).to be_an String
-  expect(trip[:departure_date]).to be_an DateTime
+  expect(trip[:id]).to be_an String
+  expect(trip[:type]).to eq 'trip'
+  expect(trip[:attributes][:uid]).to be_an String
+  expect(trip[:attributes][:name]).to be_an String
+  expect(trip[:attributes][:departure_date]).to be_an String
 end
 
