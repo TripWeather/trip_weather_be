@@ -4,32 +4,25 @@ require 'rails_helper'
 
 RSpec.describe 'Trips API | Show' do
   describe 'Trip Show' do
-    let!(:load_obj) { 3.times { |i| trip_initialize_has_many('1000', i) } }
+    let!(:load_obj) { @trip = trip_initialize_has_many('1000', 1) }
     context('Happy Path') do
-      it 'returns trip associated to :id' do
-        get api_v1_trip_path('1000', 1)
-        expect(response).to have_http_status(200)
-
-        trips_response = JSON.parse(response.body, symbolize_names: true)
-        expect(trips_response[:data].count).to eq 1
-      end
-
       it 'all :uid associated trip values are correct types' do
-        get api_v1_trip_path('1000', 1)
+        get api_v1_trip_path('1000', @trip.id)
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
-        trips_response[:data].each { |trip| trip_type_check(trip) }
+        trip_type_check(trips_response[:data])
       end
     end
 
-    context('Sad Path') do
-      it 'returns empty array if :uid has no trips' do
-        get api_v1_trip_path('2000', 1)
-        expect(response).to have_http_status(200)
+    context('Edge Path') do
+      it 'returns empty array if :id does not exist' do
+        id = 2
+        get api_v1_trip_path('2000', id)
+        expect(response).to have_http_status(404)
 
-        trips_response = JSON.parse(response.body, symbolize_names: true)
-        expect(trips_response).to eq data: []
+        error_response = JSON.parse(response.body, symbolize_names: true)
+        not_found_check(error_response, id)
       end
     end
   end
@@ -41,5 +34,11 @@ def trip_type_check(trip)
   expect(trip[:attributes][:uid]).to be_an String
   expect(trip[:attributes][:name]).to be_an String
   expect(trip[:attributes][:departure_date]).to be_an String
+end
+
+def not_found_check(error_response, id)
+  expect(error_response[:errors][0][:status]).to eq '404'
+  expect(error_response[:errors][0][:title]).to eq 'Not Found'
+  expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"
 end
 
