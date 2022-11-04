@@ -40,6 +40,22 @@ RSpec.describe 'Trips API | Create' do
         error_response = JSON.parse(response.body, symbolize_names: true)
         create_unproc_entity_check(error_response)
       end
+
+      it 'returns bad request if date is in past' do
+        trip = {
+          uid: Faker::Number.number(digits: 10).to_s,
+          name: Faker::Movies::StarWars.planet,
+          departure_date: Faker::Date.forward(days: 5),
+          arrival_date: Faker::Date.backward(days: 10)
+        }
+        headers = { CONTENT_TYPE: 'application/json' }
+        post api_v1_trips_path('1000'), headers: headers, params: JSON.generate(trip: trip)
+
+        expect(response).to have_http_status(400)
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+        update_bad_request_check(error_response)
+      end
     end
   end
 end
@@ -57,4 +73,10 @@ def create_unproc_entity_check(error_response)
   expect(error_response[:errors][0][:status]).to eq '422'
   expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
   expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank", "Arrival date can't be blank"]
+end
+
+def create_bad_request_check(error_response)
+  expect(error_response[:errors][0][:status]).to eq '400'
+  expect(error_response[:errors][0][:title]).to eq 'Bad Request'
+  expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
 end
