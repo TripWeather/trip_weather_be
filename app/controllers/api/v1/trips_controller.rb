@@ -14,6 +14,16 @@ module Api
       def destroy
         Trip.destroy(params[:id])
       end
+
+      def create
+        render json: TripSerializer.new(Trip.create(trip_params)), status: 201
+      end
+
+      private
+
+      def trip_params
+        params.require(:trip).permit(:uid, :name, :departure_date, :arrival_date)
+      end
     end
   end
 end
