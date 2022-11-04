@@ -19,6 +19,10 @@ module Api
         render json: TripSerializer.new(Trip.create!(trip_params)), status: 201
       end
 
+      def update
+        render json: TripSerializer.new(Trip.update(trip_params)), status: 200
+      end
+
       private
 
       def trip_params
