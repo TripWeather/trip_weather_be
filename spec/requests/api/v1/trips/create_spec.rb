@@ -44,7 +44,7 @@ RSpec.describe 'Trips API | Create' do
   end
 end
 
-def trip_obj_check(trip_response, trip)
+def create_trip_obj_check(trip_response, trip)
   expect(trip_response[:id]).to be_an String
   expect(trip_response[:type]).to eq 'trip'
   expect(trip_response[:attributes][:uid]).to eq trip[:uid]
@@ -53,7 +53,7 @@ def trip_obj_check(trip_response, trip)
   expect(trip_response[:attributes][:arrival_date]).to be_an String
 end
 
-def unprocessable_entity_check(error_response)
+def create_unprocessable_entity_check(error_response)
   expect(error_response[:errors][0][:status]).to eq '422'
   expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
   expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank"]

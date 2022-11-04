@@ -15,7 +15,7 @@ RSpec.describe 'Trips API | Update' do
         }
         headers = { CONTENT_TYPE: 'application/json' }
 
-        put api_v1_trips_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
+        put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
 
         expect(response).to have_http_status(200)
 
@@ -32,7 +32,7 @@ RSpec.describe 'Trips API | Update' do
   end
 end
 
-def trip_obj_check(trip_response, trip)
+def update_trip_obj_check(trip_response, trip)
   expect(trip_response[:id]).to be_an String
   expect(trip_response[:type]).to eq 'trip'
   expect(trip_response[:attributes][:uid]).to eq trip[:uid]

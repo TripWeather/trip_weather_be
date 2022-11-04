@@ -28,7 +28,7 @@ RSpec.describe 'Trips API | Show' do
   end
 end
 
-def trip_type_check(trip)
+def show_trip_type_check(trip)
   expect(trip[:id]).to be_an String
   expect(trip[:type]).to eq 'trip'
   expect(trip[:attributes][:uid]).to be_an String
@@ -37,7 +37,7 @@ def trip_type_check(trip)
   expect(trip[:attributes][:arrival_date]).to be_an String
 end
 
-def not_found_check(error_response, id)
+def show_not_found_check(error_response, id)
   expect(error_response[:errors][0][:status]).to eq '404'
   expect(error_response[:errors][0][:title]).to eq 'Not Found'
   expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"

@@ -35,7 +35,7 @@ RSpec.describe 'Trips API | Index' do
   end
 end
 
-def trip_type_check(trip)
+def index_trip_type_check(trip)
   expect(trip[:id]).to be_an String
   expect(trip[:type]).to eq 'trip'
   expect(trip[:attributes][:uid]).to be_an String
