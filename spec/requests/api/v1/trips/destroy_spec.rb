@@ -2,23 +2,23 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Trips API | Show' do
-  describe 'Trip Show' do
+RSpec.describe 'Trips API | Destroy' do
+  describe 'Trip Destroy' do
     let!(:load_obj) { @trip = trip_initialize_has_many('1000', 1) }
     context('Happy Path') do
-      it 'all :uid associated trip values are correct types' do
-        get api_v1_trip_path('1000', @trip.id)
-        expect(response).to have_http_status(200)
+      it 'can destroy a Trip associated to its :id' do
+        expect { delete api_v1_trip_path('1000', @trip) }.to change(Trip, :count).by(-1)
 
-        trips_response = JSON.parse(response.body, symbolize_names: true)
-        trip_type_check(trips_response[:data])
+        expect(response).to have_http_status(204)
+
+        expect { Trip.find(@trip.id) }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
 
     context('Edge Path') do
       it 'returns a error message if :id does not exist' do
         id = 2
-        get api_v1_trip_path('2000', id)
+        delete api_v1_trip_path('2000', id)
         expect(response).to have_http_status(404)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
