@@ -23,19 +23,6 @@ RSpec.describe 'Trips API | Update' do
         update_trip_obj_check(trip_response[:data][0], trip)
       end
     end
-
-    context('Edge Case') do
-      it '' do
-        trip = {
-          uid: Faker::Number.number(digits: 10),
-          name: Faker::Movies::StarWars.planet,
-          departure_date: 1
-        }
-        headers = { CONTENT_TYPE: 'application/json' }
-
-        put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
-      end
-    end
   end
 end
 
