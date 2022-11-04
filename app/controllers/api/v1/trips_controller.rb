@@ -20,7 +20,7 @@ module Api
       end
 
       def update
-        render json: TripSerializer.new(Trip.update(trip_params)), status: 200
+        render json: TripSerializer.new(Trip.update(trip_params))
       end
 
       private
