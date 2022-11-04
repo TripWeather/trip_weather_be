@@ -41,5 +41,6 @@ def trip_type_check(trip)
   expect(trip[:attributes][:uid]).to be_an String
   expect(trip[:attributes][:name]).to be_an String
   expect(trip[:attributes][:departure_date]).to be_an String
+  expect(trip[:attributes][:arrival_date]).to be_an String
 end
 
