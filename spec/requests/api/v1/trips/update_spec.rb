@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Trips API | Update' do
   describe 'Trip Update' do
+    let!(:trip) { @trip = create(:trip, uid: '1000') }
     context('Happy Path') do
-      let!(:trip) { @trip = create(:trip, uid: '1000') }
       it 'updates an existing trip' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
@@ -26,7 +26,14 @@ RSpec.describe 'Trips API | Update' do
 
     context('Edge Case') do
       it '' do
+        trip = {
+          uid: Faker::Number.number(digits: 10),
+          name: Faker::Movies::StarWars.planet,
+          departure_date: 1
+        }
+        headers = { CONTENT_TYPE: 'application/json' }
 
+        put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
       end
     end
   end

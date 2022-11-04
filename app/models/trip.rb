@@ -6,10 +6,10 @@ class Trip < ApplicationRecord
   has_many :stops, dependent: :destroy
   has_many :addresses, through: :stops
 
-  validates :uid,
-            :name,
-            :departure_date,
-            presence: true
+  validates :uid, presence: true
+  validates :name, presence: true
+  validates :departure_date, presence: true
+  validates :arrival_date, presence: true
 
   private
 
