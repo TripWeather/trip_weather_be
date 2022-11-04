@@ -17,8 +17,8 @@ RSpec.describe 'Trips API | Destroy' do
 
     context('Edge Path') do
       it 'returns a error message if :id does not exist' do
-        id = 2
-        delete api_v1_trip_path('2000', id)
+        id = 1000
+        delete api_v1_trip_path('9898989', id)
         expect(response).to have_http_status(404)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
