@@ -20,7 +20,7 @@ RSpec.describe 'Trips API | Update' do
         expect(response).to have_http_status(200)
 
         trip_response = JSON.parse(response.body, symbolize_names: true)
-        trip_obj_check(trip_response[:data], trip)
+        update_trip_obj_check(trip_response[:data][0], trip)
       end
     end
 

@@ -22,7 +22,7 @@ RSpec.describe 'Trips API | Destroy' do
         expect(response).to have_http_status(404)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        not_found_check(error_response, id)
+        destroy_not_found_check(error_response, id)
       end
     end
   end

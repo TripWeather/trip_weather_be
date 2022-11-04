@@ -21,7 +21,7 @@ RSpec.describe 'Trips API | Create' do
         expect(response).to have_http_status(201)
 
         trip_response = JSON.parse(response.body, symbolize_names: true)
-        trip_obj_check(trip_response[:data], trip)
+        create_trip_obj_check(trip_response[:data], trip)
       end
     end
 
@@ -38,7 +38,7 @@ RSpec.describe 'Trips API | Create' do
         expect(response).to have_http_status(422)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        unprocessable_entity_check(error_response)
+        create_unproc_entity_check(error_response)
       end
     end
   end
@@ -53,7 +53,7 @@ def create_trip_obj_check(trip_response, trip)
   expect(trip_response[:attributes][:arrival_date]).to be_an String
 end
 
-def create_unprocessable_entity_check(error_response)
+def create_unproc_entity_check(error_response)
   expect(error_response[:errors][0][:status]).to eq '422'
   expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
   expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank"]

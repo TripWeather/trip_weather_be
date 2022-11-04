@@ -11,7 +11,7 @@ RSpec.describe 'Trips API | Show' do
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
-        trip_type_check(trips_response[:data])
+        show_trip_type_check(trips_response[:data])
       end
     end
 
@@ -22,7 +22,7 @@ RSpec.describe 'Trips API | Show' do
         expect(response).to have_http_status(404)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        not_found_check(error_response, id)
+        show_not_found_check(error_response, id)
       end
     end
   end

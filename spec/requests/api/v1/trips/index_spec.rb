@@ -19,7 +19,7 @@ RSpec.describe 'Trips API | Index' do
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
-        trips_response[:data].each { |trip| trip_type_check(trip) }
+        trips_response[:data].each { |trip| index_trip_type_check(trip) }
       end
     end
 
