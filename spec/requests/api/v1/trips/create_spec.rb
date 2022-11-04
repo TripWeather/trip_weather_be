@@ -54,29 +54,29 @@ RSpec.describe 'Trips API | Create' do
         expect(response).to have_http_status(400)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        update_bad_request_check(error_response)
+        create_bad_request_check(error_response)
       end
     end
   end
+  def create_trip_obj_check(trip_response, trip)
+    expect(trip_response[:id]).to be_an String
+    expect(trip_response[:type]).to eq 'trip'
+    expect(trip_response[:attributes][:uid]).to eq trip[:uid]
+    expect(trip_response[:attributes][:name]).to eq trip[:name]
+    expect(trip_response[:attributes][:departure_date]).to be_an String
+    expect(trip_response[:attributes][:arrival_date]).to be_an String
+  end
+
+  def create_unproc_entity_check(error_response)
+    expect(error_response[:errors][0][:status]).to eq '422'
+    expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
+    expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank", "Arrival date can't be blank"]
+  end
+
+  def create_bad_request_check(error_response)
+    expect(error_response[:errors][0][:status]).to eq '400'
+    expect(error_response[:errors][0][:title]).to eq 'Bad Request'
+    expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
+  end
 end
 
-def create_trip_obj_check(trip_response, trip)
-  expect(trip_response[:id]).to be_an String
-  expect(trip_response[:type]).to eq 'trip'
-  expect(trip_response[:attributes][:uid]).to eq trip[:uid]
-  expect(trip_response[:attributes][:name]).to eq trip[:name]
-  expect(trip_response[:attributes][:departure_date]).to be_an String
-  expect(trip_response[:attributes][:arrival_date]).to be_an String
-end
-
-def create_unproc_entity_check(error_response)
-  expect(error_response[:errors][0][:status]).to eq '422'
-  expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
-  expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank", "Arrival date can't be blank"]
-end
-
-def create_bad_request_check(error_response)
-  expect(error_response[:errors][0][:status]).to eq '400'
-  expect(error_response[:errors][0][:title]).to eq 'Bad Request'
-  expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
-end

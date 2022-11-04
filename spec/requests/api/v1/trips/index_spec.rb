@@ -33,14 +33,14 @@ RSpec.describe 'Trips API | Index' do
       end
     end
   end
+  def index_trip_type_check(trip)
+    expect(trip[:id]).to be_an String
+    expect(trip[:type]).to eq 'trip'
+    expect(trip[:attributes][:uid]).to be_an String
+    expect(trip[:attributes][:name]).to be_an String
+    expect(trip[:attributes][:departure_date]).to be_an String
+    expect(trip[:attributes][:arrival_date]).to be_an String
+  end
 end
 
-def index_trip_type_check(trip)
-  expect(trip[:id]).to be_an String
-  expect(trip[:type]).to eq 'trip'
-  expect(trip[:attributes][:uid]).to be_an String
-  expect(trip[:attributes][:name]).to be_an String
-  expect(trip[:attributes][:departure_date]).to be_an String
-  expect(trip[:attributes][:arrival_date]).to be_an String
-end
 
