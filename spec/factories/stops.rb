@@ -2,14 +2,13 @@
 
 FactoryBot.define do
   factory :stop do
-    type_of_stop { 'extra' }
 
     trait :start do
-      type_of_stop { 'start' }
+      type_of_stop { 0 }
     end
 
     trait :end do
-      type_of_stop { 'end' }
+      type_of_stop { 2 }
     end
 
     factory :start_stop, traits: [:start]

@@ -14,4 +14,3 @@ RSpec.describe Trip, type: :model do
     it { should validate_presence_of(:departure_date) }
   end
 end
-

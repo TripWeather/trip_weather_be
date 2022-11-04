@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "stops", force: :cascade do |t|
     t.bigint "trip_id"
     t.bigint "address_id"
-    t.string "type_of_stop"
+    t.integer "type_of_stop", default: 1
     t.index ["address_id"], name: "index_stops_on_address_id"
     t.index ["trip_id"], name: "index_stops_on_trip_id"
   end
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "uid"
     t.string "name"
     t.datetime "departure_date"
+    t.datetime "arrival_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

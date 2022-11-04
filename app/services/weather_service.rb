@@ -1,5 +1,6 @@
-class WeatherService
+# frozen_string_literal: true
 
+class WeatherService
   def self.connection
     Faraday.new(
       url: 'https://api.weather.gov/'

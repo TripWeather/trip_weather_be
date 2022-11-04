@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Weather
   attr_reader :name, :temperature, :short_forecast, :detailed_forecast
 
