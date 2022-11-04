@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe NavService, :vcr do
-  it 'should return parsed route hash' do
+  it 'should return parsed route hash #route_directions' do
     starting_address = "200 E Colfax Ave, Denver, CO 80203"
     end_address = "350 State St, Salt Lake City, UT 84103"
  
@@ -14,4 +14,5 @@ RSpec.describe NavService, :vcr do
     expect(nav_service_call[:route][:legs][0][:maneuvers][0][:narrative]).to be_an(String)
 
   end
+
 end
