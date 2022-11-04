@@ -8,6 +8,7 @@ RSpec.describe 'Trips API | Destroy' do
     context('Happy Path') do
       it 'can destroy a Trip associated to its :id' do
         expect { delete api_v1_trip_path('1000', @trip) }.to change(Trip, :count).by(-1)
+        binding.pry
 
         expect(response).to have_http_status(204)
 
