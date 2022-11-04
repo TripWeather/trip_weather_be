@@ -56,5 +56,5 @@ end
 def create_unproc_entity_check(error_response)
   expect(error_response[:errors][0][:status]).to eq '422'
   expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
-  expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank"]
+  expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank", "Arrival date can't be blank"]
 end
