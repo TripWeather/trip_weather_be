@@ -10,6 +10,10 @@ module Api
       def show
         render json: TripSerializer.new(Trip.find(params[:id]))
       end
+
+      def destroy
+        Trip.destroy(params[:id])
+      end
     end
   end
 end
