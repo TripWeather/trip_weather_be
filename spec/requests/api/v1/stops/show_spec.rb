@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Stops API | Index' do
-  describe 'Stop Index' do
+RSpec.describe 'Stops API | Show' do
+  describe 'Stop Show' do
     context('Happy Path') do
       let!(:load_obj) do
         @trip = trip_initialize_has_many('1000')

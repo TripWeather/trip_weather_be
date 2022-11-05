@@ -3,9 +3,8 @@
 module Api
   module V1
     class AddressesController < ApplicationController
-      def index
-        stop = Stop.find(params[:stop_id])
-        render json: AddressSerializer.new(stop.address)
+      def show
+        render json: AddressSerializer.new(Address.find(params[:id]))
       end
     end
   end

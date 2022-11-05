@@ -6,7 +6,7 @@ class StopSerializer
 
   has_one :address, links: {
     related: lambda { |object|
-      "https://trip-weather-2022.herokuapp.com/api/v1/106758666395730546327/trips/#{object.trip.id}/stops/#{object.id}/addresses"
+      "https://trip-weather-2022.herokuapp.com/api/v1/106758666395730546327/trips/#{object.trip.id}/stops/#{object.id}/addresses/#{object.address.id}"
     }
   }
 end

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       scope ':user_id' do
         resources :trips do
           resources :stops, only: %i[index show] do
-            resources :addresses, only: %i[index]
+            resources :addresses, only: %i[show]
           end
         end
       end
