@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       scope ':user_id' do
-        resources :trips, only: %i[index show destroy]
+        resources :trips
       end
     end
   end

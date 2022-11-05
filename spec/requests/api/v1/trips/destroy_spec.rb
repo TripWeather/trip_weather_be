@@ -22,15 +22,15 @@ RSpec.describe 'Trips API | Destroy' do
         expect(response).to have_http_status(404)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        not_found_check(error_response, id)
+        destroy_not_found_check(error_response, id)
       end
     end
   end
+  def destroy_not_found_check(error_response, id)
+    expect(error_response[:errors][0][:status]).to eq '404'
+    expect(error_response[:errors][0][:title]).to eq 'Not Found'
+    expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"
+  end
 end
 
-def not_found_check(error_response, id)
-  expect(error_response[:errors][0][:status]).to eq '404'
-  expect(error_response[:errors][0][:title]).to eq 'Not Found'
-  expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"
-end
 

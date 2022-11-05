@@ -11,7 +11,7 @@ RSpec.describe 'Trips API | Show' do
         expect(response).to have_http_status(200)
 
         trips_response = JSON.parse(response.body, symbolize_names: true)
-        trip_type_check(trips_response[:data])
+        show_trip_type_check(trips_response[:data])
       end
     end
 
@@ -22,23 +22,24 @@ RSpec.describe 'Trips API | Show' do
         expect(response).to have_http_status(404)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        not_found_check(error_response, id)
+        show_not_found_check(error_response, id)
       end
     end
   end
+  def show_trip_type_check(trip)
+    expect(trip[:id]).to be_an String
+    expect(trip[:type]).to eq 'trip'
+    expect(trip[:attributes][:uid]).to be_an String
+    expect(trip[:attributes][:name]).to be_an String
+    expect(trip[:attributes][:departure_date]).to be_an String
+    expect(trip[:attributes][:arrival_date]).to be_an String
+  end
+
+  def show_not_found_check(error_response, id)
+    expect(error_response[:errors][0][:status]).to eq '404'
+    expect(error_response[:errors][0][:title]).to eq 'Not Found'
+    expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"
+  end
 end
 
-def trip_type_check(trip)
-  expect(trip[:id]).to be_an String
-  expect(trip[:type]).to eq 'trip'
-  expect(trip[:attributes][:uid]).to be_an String
-  expect(trip[:attributes][:name]).to be_an String
-  expect(trip[:attributes][:departure_date]).to be_an String
-end
-
-def not_found_check(error_response, id)
-  expect(error_response[:errors][0][:status]).to eq '404'
-  expect(error_response[:errors][0][:title]).to eq 'Not Found'
-  expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"
-end
 
