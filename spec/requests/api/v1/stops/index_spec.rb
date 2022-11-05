@@ -15,7 +15,7 @@ RSpec.describe 'Stops API | Index' do
       end
 
       it 'all stops have correct data types' do
-        get api_v1_trips_path('1000')
+        get api_v1_trip_stops_path('1000', @trip)
         expect(response).to have_http_status(200)
 
         stops_response = JSON.parse(response.body, symbolize_names: true)
@@ -35,7 +35,10 @@ RSpec.describe 'Stops API | Index' do
     end
   end
   def index_stop_type_check(stop)
-    binding.pry
+    expect(stop[:id]).to be_an String
+    expect(stop[:type]).to eq 'stop'
+    expect(stop[:attributes]).to be_an Hash
+    expect(stop.dig(:attributes, :type_of_stop)).to be_an String
   end
 end
 
