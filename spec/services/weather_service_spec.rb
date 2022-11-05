@@ -16,13 +16,10 @@ RSpec.describe WeatherService, :vcr do
     it 'should return forcast data for a given latitude/longitude' do
       forecast_call = WeatherService.forecast_data(39.7456, -97.0892)
 
-      expect(forecast_call[:properties][:periods][0][:temperature]).to eq(58)
       expect(forecast_call[:properties][:periods][0][:temperature]).to be_an(Integer)
 
-      expect(forecast_call[:properties][:periods][0][:shortForecast]).to eq('Partly Cloudy')
       expect(forecast_call[:properties][:periods][0][:shortForecast]).to be_an(String)
 
-      expect(forecast_call[:properties][:periods][0][:detailedForecast]).to eq('Partly cloudy, with a low around 58. South wind 15 to 20 mph, with gusts as high as 40 mph.')
       expect(forecast_call[:properties][:periods][0][:detailedForecast]).to be_an(String)
     end
   end

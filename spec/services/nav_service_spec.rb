@@ -9,10 +9,7 @@ RSpec.describe NavService, :vcr do
     expect(nav_service_call).to be_a(Hash)
     expect(nav_service_call[:route][:hasTollRoad]).to be_in([true, false])
     expect(nav_service_call[:route][:realTime]).to be_an(Integer)
-    expect(nav_service_call[:route][:fuelUsed]).to be_an(Float)
     expect(nav_service_call[:route][:legs][0][:maneuvers][0][:distance]).to be_an(Float)
     expect(nav_service_call[:route][:legs][0][:maneuvers][0][:narrative]).to be_an(String)
-
   end
-
 end

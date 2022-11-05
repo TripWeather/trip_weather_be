@@ -20,7 +20,7 @@ RSpec.describe 'Navigation Facade', :vcr do
 
     expect(details).to be_an(Hash)
     expect(details).to have_key(:realTime)
-    expect(details).to have_key(:fuelUsed)
+    # require 'pry'; binding.pry
     expect(details).to have_key(:hasTollRoad)
     expect(details).to have_key(:distance)
   end
