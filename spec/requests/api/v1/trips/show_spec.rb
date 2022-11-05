@@ -41,5 +41,3 @@ RSpec.describe 'Trips API | Show' do
     expect(error_response[:errors][0][:detail]).to eq "Couldn't find Trip with 'id'=#{id}"
   end
 end
-
-

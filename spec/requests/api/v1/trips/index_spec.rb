@@ -42,5 +42,3 @@ RSpec.describe 'Trips API | Index' do
     expect(trip[:attributes][:arrival_date]).to be_an String
   end
 end
-
-

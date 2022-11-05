@@ -1,5 +1,6 @@
-class NavService
+# frozen_string_literal: true
 
+class NavService
   def self.parse(api_data)
     JSON.parse(api_data.body, symbolize_names: true)
   end
@@ -9,12 +10,10 @@ class NavService
     parse(response)
   end
 
-  private
-
   def self.connection
     Faraday.new(
       url: 'http://www.mapquestapi.com',
-      params: {key: ENV['NAV_API']}
-      )
+      params: { key: ENV['NAV_API'] }
+    )
   end
 end

@@ -36,17 +36,17 @@ http_interactions:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=81341, s-maxage=120
+      - public, max-age=28537, s-maxage=120
       Expires:
-      - Sun, 06 Nov 2022 01:34:24 GMT
+      - Sun, 06 Nov 2022 01:34:18 GMT
       Date:
-      - Sat, 05 Nov 2022 02:58:43 GMT
+      - Sat, 05 Nov 2022 17:38:41 GMT
       Content-Length:
       - '3096'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - 18914c3
+      - afecf7e6
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -146,5 +146,5 @@ http_interactions:
                 "radarStation": "KTWX"
             }
         }
-  recorded_at: Sat, 05 Nov 2022 02:58:43 GMT
+  recorded_at: Sat, 05 Nov 2022 17:38:41 GMT
 recorded_with: VCR 6.1.0

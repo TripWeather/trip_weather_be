@@ -1,4 +1,6 @@
-class Nav 
+# frozen_string_literal: true
+
+class Nav
   attr_reader :turn_by_turn_directions, :total_trip_time, :total_distance, :has_toll_road
 
   def initialize(nav_hash)
