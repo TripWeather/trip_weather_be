@@ -9,7 +9,7 @@ RSpec.describe 'Navigation Facade', :vcr do
     expect(trip).to be_an(Array)
 
     trip.each do |step|
-      expect(step).to be_a(String) 
+      expect(step).to be_an(Array) 
     end
   end
 
