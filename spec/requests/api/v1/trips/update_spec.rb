@@ -57,4 +57,3 @@ RSpec.describe 'Trips API | Update' do
     expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
   end
 end
-

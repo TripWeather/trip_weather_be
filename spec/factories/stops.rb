@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :stop do
-
     trait :start do
       type_of_stop { 0 }
     end

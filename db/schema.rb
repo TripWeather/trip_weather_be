@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,33 +13,32 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 3) do
-
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "addresses", force: :cascade do |t|
-    t.string "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'addresses', force: :cascade do |t|
+    t.string 'location'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "stops", force: :cascade do |t|
-    t.bigint "trip_id"
-    t.bigint "address_id"
-    t.integer "type_of_stop", default: 1
-    t.index ["address_id"], name: "index_stops_on_address_id"
-    t.index ["trip_id"], name: "index_stops_on_trip_id"
+  create_table 'stops', force: :cascade do |t|
+    t.bigint 'trip_id'
+    t.bigint 'address_id'
+    t.integer 'type_of_stop', default: 1
+    t.index ['address_id'], name: 'index_stops_on_address_id'
+    t.index ['trip_id'], name: 'index_stops_on_trip_id'
   end
 
-  create_table "trips", force: :cascade do |t|
-    t.string "uid"
-    t.string "name"
-    t.time "departure_date"
-    t.time "arrival_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'trips', force: :cascade do |t|
+    t.string 'uid'
+    t.string 'name'
+    t.time 'departure_date'
+    t.time 'arrival_date'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "stops", "addresses"
-  add_foreign_key "stops", "trips"
+  add_foreign_key 'stops', 'addresses'
+  add_foreign_key 'stops', 'trips'
 end

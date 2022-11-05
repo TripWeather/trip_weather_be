@@ -1,9 +1,10 @@
-class NavFacade < NavService
+# frozen_string_literal: true
 
+class NavFacade < NavService
   def self.get_directions(start_address, end_address)
     route = route_directions(start_address, end_address)[:route][:legs][0][:maneuvers]
 
-    all_directions = [] 
+    all_directions = []
     turn_distances = []
 
     route.each do |step|

@@ -41,5 +41,3 @@ RSpec.describe 'Stops API | Index' do
     expect(stop.dig(:attributes, :type_of_stop)).to be_an String
   end
 end
-
-
