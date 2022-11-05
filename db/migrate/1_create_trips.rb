@@ -5,8 +5,8 @@ class CreateTrips < ActiveRecord::Migration[5.2]
     create_table :trips do |t|
       t.string :uid
       t.string :name
-      t.datetime :departure_date
-      t.datetime :arrival_date
+      t.time :departure_date
+      t.time :arrival_date
 
       t.timestamps
     end
