@@ -5,13 +5,13 @@ require 'rails_helper'
 RSpec.describe 'Stops API | Index' do
   describe 'Stop Index' do
     context('Happy Path') do
-      let!(:load_obj) { @trip = trip_initialize_has_many('1000', 2) }
+      let!(:load_obj) { @trip = trip_initialize_has_many('1000') }
       it 'returns all stops associated to a trip' do
         get api_v1_trip_stops_path('1000', @trip)
         expect(response).to have_http_status(200)
 
         stops_response = JSON.parse(response.body, symbolize_names: true)
-        expect(stops_response[:data].count).to eq 4
+        expect(stops_response[:data].count).to eq 2
       end
 
       it 'all stops have correct data types' do
