@@ -5,6 +5,7 @@ module Api
     class AddressesController < ApplicationController
       def show
         render json: AddressSerializer.new(Address.find(params[:id]))
+        
       end
     end
   end

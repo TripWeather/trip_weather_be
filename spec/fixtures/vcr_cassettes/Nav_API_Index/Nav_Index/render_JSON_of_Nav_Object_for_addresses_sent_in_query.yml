@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/directions/v2/route?from=12230%20Washington%20Center%20Pkwy,%20Thornton,%20CO%2080241&key=b71nqgsCMDTnICrLzk3t5nUqbAStRz9q&to=2303%20Braun%20Ct,%20Golden,%20CO%2080401
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 502
+      message: Bad Gateway
+    headers:
+      Date:
+      - Sat, 05 Nov 2022 23:32:49 GMT
+      Content-Type:
+      - text/html
+      Content-Length:
+      - '122'
+      Server:
+      - awselb/2.0
+      X-Vz-Migration-Api:
+      - 'true'
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502
+        Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Sat, 05 Nov 2022 23:32:49 GMT
+recorded_with: VCR 6.1.0
