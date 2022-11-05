@@ -14,7 +14,7 @@ class NavFacade < NavService
   end
 
   def self.trip_details(start_address, end_address)
-    details = route_directions(start_address, end_address)[:route].slice(:realTime, :fuelUsed, :hasTollRoad, :distance)
+    details = route_directions(start_address, end_address)[:route].slice(:realTime, :hasTollRoad, :distance)
   end
 
   def self.nav_object(start_address, end_address)

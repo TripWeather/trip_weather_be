@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.positionstack.com/v1/forward?access_key=1d4b462a0581418e3bc5e6454245fbfe&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC
+    uri: http://api.positionstack.com/v1/forward?access_key=506920f7b6a5e821f70babfd18080a31&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 03 Nov 2022 00:04:29 GMT
+      - Sat, 05 Nov 2022 02:58:40 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Cache-Control:
       - no-cache, private
       X-Apilayer-Transaction-Id:
-      - c70eab70-d158-4e16-b4b7-753546426de2
+      - d4da394a-df9c-47e6-abbe-a30482d3ea4a
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -45,21 +45,21 @@ http_interactions:
       X-Quota-Limit:
       - '25000'
       X-Quota-Remaining:
-      - '24991'
+      - '24954'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.094'
+      - '0.099'
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=H2pyW8iZJ%2FTLU2dZPd2lYiJXHuGplcmvU%2FKT%2F7DQmarXRF1XUdwxCj4r4%2Bur%2FAN7WQeVkq7JsiaJXUHXsOPZkeiyrxVxKTSq0SHiSlFHda%2BaLEO%2F4%2BK23luq74zXTFMS%2FniZ807ATkk%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=36Y2GX9kAYH%2BAf0YIwxVGL%2FZ7qMgW9rmzNSm3hpwklg1AZIs3f%2BvPPCaQf7VcPH%2B6W708HyfNWkkvUzYPu8ZyleJEYzYv29WuTkfYbGwHDm%2FUOMTSem%2BNGDxB7W0c0XGwoKKVKjKPEk%3D"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 7640da513f920c3a-DFW
+      - 76525437bfe50bfb-DFW
       Alt-Svc:
       - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
@@ -75,81 +75,5 @@ http_interactions:
         of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
         House Grounds","country":"United States","country_code":"USA","continent":"North
         America","label":"1600 Pennsylvania Avenue Northwest, Washington, DC, USA"}]}'
-  recorded_at: Thu, 03 Nov 2022 00:04:29 GMT
-- request:
-    method: get
-    uri: http://api.positionstack.com/v1/forward?access_key=1d4b462a0581418e3bc5e6454245fbfe&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.6.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Thu, 03 Nov 2022 00:04:29 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Faraday v2.6.0
-      Accept-Encoding:
-      - gzip
-      Cache-Control:
-      - no-cache, private
-      X-Apilayer-Transaction-Id:
-      - 38f46bbd-7254-4769-87c5-9b700401450a
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS
-      Access-Control-Allow-Headers:
-      - "*"
-      X-Quota-Limit:
-      - '25000'
-      X-Quota-Remaining:
-      - '24990'
-      X-Increment-Usage:
-      - '1'
-      X-Request-Time:
-      - '0.082'
-      Cf-Cache-Status:
-      - DYNAMIC
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=E5lLtaC16%2FnG%2FtNX3S%2FH3YXqi0oD5X3HrJUwF5OmXusxwxb4352SHxwvuUGkgIg4e5W24aNSX70B%2FgboSrCMZcR9IEPairBMjE2uXLJMURT%2BYZnTb76JyFjZSw4PZGMHxrx9e%2FaXn54%3D"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 7640da530b85e556-DFW
-      Alt-Svc:
-      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: '{"data":[{"latitude":38.897675,"longitude":-77.036547,"type":"address","name":"1600
-        Pennsylvania Avenue NW","number":"1600","postal_code":"20500","street":"Pennsylvania
-        Avenue NW","confidence":1,"region":"District of Columbia","region_code":"DC","county":"District
-        of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
-        House Grounds","country":"United States","country_code":"USA","continent":"North
-        America","label":"1600 Pennsylvania Avenue NW, Washington, DC, USA"},{"latitude":38.897473,"longitude":-77.036548,"type":"address","name":"1600
-        Pennsylvania Avenue Northwest","number":"1600","postal_code":"20500","street":"Pennsylvania
-        Avenue Northwest","confidence":1,"region":"District of Columbia","region_code":"DC","county":"District
-        of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
-        House Grounds","country":"United States","country_code":"USA","continent":"North
-        America","label":"1600 Pennsylvania Avenue Northwest, Washington, DC, USA"}]}'
-  recorded_at: Thu, 03 Nov 2022 00:04:29 GMT
+  recorded_at: Sat, 05 Nov 2022 02:58:39 GMT
 recorded_with: VCR 6.1.0
