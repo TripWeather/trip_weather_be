@@ -13,8 +13,8 @@ class NavService
 
   def self.connection
     Faraday.new(
-        url: 'http://www.mapquestapi.com',
-        params: {key: ENV['NAV_API']})
+      url: 'http://www.mapquestapi.com',
+      params: {key: ENV['NAV_API']}
+      )
   end
-
 end
