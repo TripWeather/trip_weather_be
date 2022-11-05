@@ -12,4 +12,3 @@ RSpec.describe Stop, type: :model do
     it { should validate_presence_of(:type_of_stop) }
   end
 end
-

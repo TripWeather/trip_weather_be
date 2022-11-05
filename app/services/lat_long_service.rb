@@ -1,10 +1,11 @@
-class LatLongService
+# frozen_string_literal: true
 
+class LatLongService
   def self.connection
     Faraday.new(
-        url: 'http://api.positionstack.com/v1/',
-        params: {access_key: ENV['LAT_LONG_API']}
-      )
+      url: 'http://api.positionstack.com/v1/',
+      params: { access_key: ENV['LAT_LONG_API'] }
+    )
   end
 
   def self.parse(api_data)
@@ -14,5 +15,5 @@ class LatLongService
   def self.address_to_coord(address)
     response = connection.get("forward?query=#{address}")
     parse(response)
-  end 
+  end
 end
