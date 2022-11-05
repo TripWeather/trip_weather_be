@@ -13,6 +13,8 @@ class Trip < ApplicationRecord
   validates :departure_date, presence: true
   validates :arrival_date, presence: true
 
+  # , comparison: { less_than: :arrival_date }
+
   private
 
   def date_cannot_be_in_past
