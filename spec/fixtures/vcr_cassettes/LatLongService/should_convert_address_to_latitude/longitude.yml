@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.positionstack.com/v1/forward?access_key=506920f7b6a5e821f70babfd18080a31&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 05 Nov 2022 17:38:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip
+      Cache-Control:
+      - no-cache, private
+      X-Apilayer-Transaction-Id:
+      - 1d99cd03-bc73-4679-a83b-8b146920647f
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '25000'
+      X-Quota-Remaining:
+      - '24945'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.076'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=P4gr2eC1CWVULO2fhukAgGq0JF8TrO6coLgqCVEQip7QqNXJjbZlUSLZ5Uzo3%2FD3mW6wULATV%2BEPMhmSSmfHCM54adbNhIam3OLY3v7a1uzmBe%2FMhrLq5wFBo4kLfqIRbpzCEqr75DvT%2FhfVJyV2KvVDarY%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 76575d512a8ae807-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"latitude":38.897675,"longitude":-77.036547,"type":"address","name":"1600
+        Pennsylvania Avenue NW","number":"1600","postal_code":"20500","street":"Pennsylvania
+        Avenue NW","confidence":1,"region":"District of Columbia","region_code":"DC","county":"District
+        of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
+        House Grounds","country":"United States","country_code":"USA","continent":"North
+        America","label":"1600 Pennsylvania Avenue NW, Washington, DC, USA"},{"latitude":38.897473,"longitude":-77.036548,"type":"address","name":"1600
+        Pennsylvania Avenue Northwest","number":"1600","postal_code":"20500","street":"Pennsylvania
+        Avenue Northwest","confidence":1,"region":"District of Columbia","region_code":"DC","county":"District
+        of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
+        House Grounds","country":"United States","country_code":"USA","continent":"North
+        America","label":"1600 Pennsylvania Avenue Northwest, Washington, DC, USA"}]}'
+  recorded_at: Sat, 05 Nov 2022 17:38:41 GMT
+recorded_with: VCR 6.1.0

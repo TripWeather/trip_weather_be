@@ -9,8 +9,8 @@ RSpec.describe 'Trips API | Create' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
-          departure_date: (DateTime.now + 5.days).utc.to_s,
-          arrival_date: (DateTime.now + 10.days).utc.to_s
+          departure_date: DateTime.now + 5.days,
+          arrival_date: DateTime.now + 10.days
         }
         headers = { CONTENT_TYPE: 'application/json' }
 
