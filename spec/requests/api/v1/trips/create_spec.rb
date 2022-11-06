@@ -73,6 +73,22 @@ RSpec.describe 'Trips API | Create' do
         error_response = JSON.parse(response.body, symbolize_names: true)
         create_unproc_entity_check(error_response, ["Uid can't be blank"])
       end
+
+      it 'returns Unprocessable Entity if arrival date is before departure date' do
+        trip = {
+          uid: Faker::Number.number(digits: 10).to_s,
+          name: Faker::Movies::StarWars.planet,
+          departure_date: Time.current + 5.days,
+          arrival_date: Time.current + 2.days
+        }
+        headers = { CONTENT_TYPE: 'application/json' }
+        post api_v1_trips_path('1000'), headers: headers, params: JSON.generate(trip: trip)
+
+        expect(response).to have_http_status(422)
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+        create_unproc_entity_check(error_response, ["Arrival date can't before departure date"])
+      end
     end
   end
   def create_trip_obj_check(trip_response, trip)
