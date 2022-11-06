@@ -10,8 +10,8 @@ RSpec.describe 'Trips API | Update' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
-          departure_date: DateTime.now + 2.0,
-          arrival_date: DateTime.now + 5
+          departure_date: Time.current + 30.seconds,
+          arrival_date: Time.current + 10.days
         }
         headers = { CONTENT_TYPE: 'application/json' }
 
@@ -29,8 +29,8 @@ RSpec.describe 'Trips API | Update' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
-          departure_date: DateTime.now + 2.0,
-          arrival_date: DateTime.now - 5
+          departure_date: Time.current + 5.days,
+          arrival_date: Time.current - 2.days
         }
         headers = { CONTENT_TYPE: 'application/json' }
         put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
