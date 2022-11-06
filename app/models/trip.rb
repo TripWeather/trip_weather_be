@@ -9,7 +9,9 @@ class Trip < ApplicationRecord
   validates :uid, presence: true
   validates :name, presence: true
 
-  validate :departure_cannot_be_in_past, :arrival_cannot_be_in_past
+  validate :date_cannot_be_in_past,
+           :date_order
+
   validates :departure_date, presence: true
   validates :arrival_date, presence: true
 
@@ -19,11 +21,26 @@ class Trip < ApplicationRecord
     addresses.destroy_all
   end
 
+  def date_order
+    return unless arrival_date.present? && arrival_date < departure_date
+
+    errors.add(:arrival_date, "can't before departure date")
+  end
+
+  def date_cannot_be_in_past
+    departure_cannot_be_in_past
+    arrival_cannot_be_in_past
+  end
+
   def departure_cannot_be_in_past
-    errors.add(:departure_date, "can't be in the past") if departure_date.present? && departure_date < Time.current
+    return unless departure_date.present? && departure_date < (Time.current - 30.seconds)
+
+    errors.add(:departure_date, "can't be in the past")
   end
 
   def arrival_cannot_be_in_past
-    errors.add(:arrival_date, "can't be in the past") if arrival_date.present? && arrival_date < Time.current
+    return unless arrival_date.present? && arrival_date < (Time.current - 30.seconds)
+
+    errors.add(:arrival_date, "can't be in the past")
   end
 end
