@@ -2,7 +2,7 @@
 
 class NavService
   def self.parse(api_data)
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     JSON.parse(api_data.body, symbolize_names: true)
   end
 

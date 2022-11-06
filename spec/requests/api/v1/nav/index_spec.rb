@@ -17,6 +17,14 @@ RSpec.describe 'Nav API | Index' do
       get '/api/v1/nav', headers: headers, params: JSON.generate(address_params)
 
       expect(response).to be_successful
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(parsed_response[:data]).to have_key(:id)
+      expect(parsed_response[:data]).to have_key(:attributes)
+      expect(parsed_response[:data][:attributes]).to have_key(:turn_by_turn_directions)
+      expect(parsed_response[:data][:attributes]).to have_key(:total_trip_time)
+      expect(parsed_response[:data][:attributes]).to have_key(:total_distance)
+      expect(parsed_response[:data][:attributes]).to have_key(:has_toll_road)
     end
   end
 end
