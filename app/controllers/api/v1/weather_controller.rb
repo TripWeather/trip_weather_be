@@ -4,7 +4,8 @@ module Api
   module V1
     class WeatherController < ApplicationController
       def index
-        lat_long = LatLongFacade.lat_long_object(params[:address])
+        address = JSON.parse(params.keys.first, symbolize_names: true)
+        lat_long = LatLongFacade.lat_long_object(address)
         render json: WeatherSerializer.new(WeatherFacade.forecast(lat_long.latitude, lat_long.longitude))
       end
     end
