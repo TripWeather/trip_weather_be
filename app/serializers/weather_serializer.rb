@@ -2,5 +2,5 @@
 
 class WeatherSerializer
   include JSONAPI::Serializer
-  attributes :name, :temperature, :short_forecast
+  attributes :name, :temperature, :short_forecast, :detailed_forecast
 end
