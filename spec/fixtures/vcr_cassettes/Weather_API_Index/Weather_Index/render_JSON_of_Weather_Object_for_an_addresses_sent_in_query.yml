@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.positionstack.com/v1/forward?access_key=506920f7b6a5e821f70babfd18080a31&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Sun, 06 Nov 2022 02:25:03 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, private
+      X-Apilayer-Transaction-Id:
+      - 4899f009-35da-445f-a1c2-c10b5dbe2551
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '25000'
+      X-Quota-Remaining:
+      - '24942'
+      X-Increment-Usage:
+      - '1'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=YyJeQ6SIXtWvk04nPGqbEP%2B6muFR0J9O8fJrI2PY%2B9P1v%2BFaexDMWHD%2BJhPU9pPq9I0sGlTu6y1Q7LG4Xvs5MVA6wuCiM7lTalfUqyPeeI34NxFwGJI9%2FubswkIfBB29D506OS53S%2F4%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 765a605b3f55e9c1-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"error":{"code":"validation_error","message":"Request failed with
+        validation error","context":{"query":{"type":"invalid_query","message":"query
+        must have at 3 character\u0027s"}}}}'
+  recorded_at: Sun, 06 Nov 2022 02:25:03 GMT
+recorded_with: VCR 6.1.0
