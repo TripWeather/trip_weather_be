@@ -96,8 +96,8 @@ RSpec.describe 'Trips API | Create' do
     expect(trip_response[:type]).to eq 'trip'
     expect(trip_response[:attributes][:uid]).to eq trip[:uid]
     expect(trip_response[:attributes][:name]).to eq trip[:name]
-    expect(trip_response[:attributes][:departure_date]).to be_an String
-    expect(trip_response[:attributes][:arrival_date]).to be_an String
+    expect(trip_response[:attributes][:departure_date]).to eq trip[:departure_date].strftime('%FT%T.000Z')
+    expect(trip_response[:attributes][:arrival_date]).to eq trip[:arrival_date].strftime('%FT%T.000Z')
   end
 
   def create_unproc_entity_check(error_response, errors)
