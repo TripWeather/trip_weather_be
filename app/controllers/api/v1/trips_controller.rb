@@ -4,7 +4,7 @@ module Api
   module V1
     class TripsController < ApplicationController
       def index
-        render json: TripSerializer.new(Trip.where(uid: params[:user_id]))
+        render json: TripSerializer.new(Trip.where(uid: params[:uid]))
       end
 
       def show
@@ -16,6 +16,7 @@ module Api
       end
 
       def create
+        binding.pry 
         render json: TripSerializer.new(Trip.create!(trip_params)), status: 201
       end
 
