@@ -13,7 +13,6 @@ RSpec.describe 'Weather API | Index' do
       headers = {"CONTENT_TYPE" => "application/json"}
 
       get '/api/v1/weather', headers: headers, params: JSON.generate(address_params)
-
       expect(response).to be_successful
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
