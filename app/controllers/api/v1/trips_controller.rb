@@ -20,7 +20,10 @@ module Api
       end
 
       def update
-        render json: TripSerializer.new(Trip.update(trip_params))
+        trip = Trip.update(params[:id], trip_params)
+        raise ActiveRecord::RecordInvalid, trip unless trip.valid?
+
+        render json: TripSerializer.new(Trip.update(params[:id], trip_params))
       end
 
       private

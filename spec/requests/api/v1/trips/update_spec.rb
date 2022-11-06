@@ -20,12 +20,12 @@ RSpec.describe 'Trips API | Update' do
         expect(response).to have_http_status(200)
 
         trip_response = JSON.parse(response.body, symbolize_names: true)
-        update_trip_obj_check(trip_response[:data][0], trip)
+        update_trip_obj_check(trip_response[:data], trip)
       end
     end
 
     context('Edge Case') do
-      xit 'returns bad request if date is in past' do
+      it 'returns Unprocessable Entity if date is in past' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
@@ -35,10 +35,11 @@ RSpec.describe 'Trips API | Update' do
         headers = { CONTENT_TYPE: 'application/json' }
         put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
 
-        expect(response).to have_http_status(400)
+        expect(response).to have_http_status(422)
+
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        update_bad_request_check(error_response)
+        update_unproc_entity_check(error_response, ["Arrival date can't be in the past"])
       end
     end
   end
@@ -51,9 +52,9 @@ RSpec.describe 'Trips API | Update' do
     expect(trip_response[:attributes][:arrival_date]).to be_an String
   end
 
-  def update_bad_request_check(error_response)
-    expect(error_response[:errors][0][:status]).to eq '400'
-    expect(error_response[:errors][0][:title]).to eq 'Bad Request'
-    expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
+  def update_unproc_entity_check(error_response, errors)
+    expect(error_response[:errors][0][:status]).to eq '422'
+    expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
+    expect(error_response[:errors][0][:detail]).to eq errors
   end
 end

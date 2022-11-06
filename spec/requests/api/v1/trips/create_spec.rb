@@ -38,10 +38,11 @@ RSpec.describe 'Trips API | Create' do
         expect(response).to have_http_status(422)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        create_unproc_entity_check(error_response)
+        create_unproc_entity_check(error_response, ["Name can't be blank", "Departure date can't be blank",
+                                                    "Arrival date can't be blank"])
       end
 
-      xit 'returns bad request if date is in past' do
+      it 'returns Unprocessable Entity if date is in past' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
@@ -51,10 +52,10 @@ RSpec.describe 'Trips API | Create' do
         headers = { CONTENT_TYPE: 'application/json' }
         post api_v1_trips_path('1000'), headers: headers, params: JSON.generate(trip: trip)
 
-        expect(response).to have_http_status(400)
+        expect(response).to have_http_status(422)
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        create_bad_request_check(error_response)
+        create_unproc_entity_check(error_response, ["Arrival date can't be in the past"])
       end
     end
   end
@@ -67,16 +68,9 @@ RSpec.describe 'Trips API | Create' do
     expect(trip_response[:attributes][:arrival_date]).to be_an String
   end
 
-  def create_unproc_entity_check(error_response)
+  def create_unproc_entity_check(error_response, errors)
     expect(error_response[:errors][0][:status]).to eq '422'
     expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
-    expect(error_response[:errors][0][:detail]).to eq ["Name can't be blank", "Departure date can't be blank",
-                                                       "Arrival date can't be blank"]
-  end
-
-  def create_bad_request_check(error_response)
-    expect(error_response[:errors][0][:status]).to eq '400'
-    expect(error_response[:errors][0][:title]).to eq 'Bad Request'
-    expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
+    expect(error_response[:errors][0][:detail]).to eq errors
   end
 end
