@@ -1,0 +1,543 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.positionstack.com/v1/forward?access_key=506920f7b6a5e821f70babfd18080a31&query=%7B:address=%3E%2212230%20Washington%20Center%20Pkwy,%20Thornton,%20CO%2080241%22%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 06 Nov 2022 17:24:54 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip
+      Cache-Control:
+      - no-cache, private
+      X-Apilayer-Transaction-Id:
+      - fad55ce3-e159-48b8-9ad0-236e94190c27
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS
+      Access-Control-Allow-Headers:
+      - "*"
+      X-Quota-Limit:
+      - '25000'
+      X-Quota-Remaining:
+      - '24934'
+      X-Increment-Usage:
+      - '1'
+      X-Request-Time:
+      - '0.423'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=WHGNagRD8dBbjy4TPegezVQyYhvD3IjwkAJRC2QbusGhnYdWp2L1e20yWIIb1uCPciXXS9VseOM2ZdyHvzaw8q8P8P6elO99aTm8gMowG3nP4w1gAuagwJaxXKQc09fMFit0lKUBmDCmYTX3GMAl7md0iMw%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 765f867dba0ee813-DFW
+      Alt-Svc:
+      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":[{"latitude":39.920913,"longitude":-104.974662,"type":"address","name":"12230
+        Washington Center Pkwy","number":"12230","postal_code":"80241","street":"Washington
+        Center Pkwy","confidence":1,"region":"Colorado","region_code":"CO","county":"Adams
+        County","locality":"Thornton","administrative_area":null,"neighbourhood":null,"country":"United
+        States","country_code":"USA","continent":"North America","label":"12230 Washington
+        Center Pkwy, Thornton, CO, USA"},{"latitude":39.916052,"longitude":-104.97019,"type":"address","name":"12150
+        Washington Center Pkwy","number":"12150","postal_code":"80241","street":"Washington
+        Center Pkwy","confidence":1,"region":"Colorado","region_code":"CO","county":"Adams
+        County","locality":"Thornton","administrative_area":null,"neighbourhood":null,"country":"United
+        States","country_code":"USA","continent":"North America","label":"12150 Washington
+        Center Pkwy, Thornton, CO, USA"}]}'
+  recorded_at: Sun, 06 Nov 2022 17:24:54 GMT
+- request:
+    method: get
+    uri: https://api.weather.gov/points/39.9209,-104.9747
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.20.1
+      Content-Type:
+      - application/geo+json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      X-Request-Id:
+      - a946031a-86fa-48a9-9221-a14225e390bd
+      X-Correlation-Id:
+      - 9290e0a
+      X-Server-Id:
+      - vm-lnx-nids-apiapp6.ncep.noaa.gov
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=33956, s-maxage=120
+      Expires:
+      - Mon, 07 Nov 2022 02:50:50 GMT
+      Date:
+      - Sun, 06 Nov 2022 17:24:54 GMT
+      Content-Length:
+      - '3092'
+      Connection:
+      - keep-alive
+      X-Edge-Request-Id:
+      - fb71c04f
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "@context": [
+                "https://geojson.org/geojson-ld/geojson-context.jsonld",
+                {
+                    "@version": "1.1",
+                    "wx": "https://api.weather.gov/ontology#",
+                    "s": "https://schema.org/",
+                    "geo": "http://www.opengis.net/ont/geosparql#",
+                    "unit": "http://codes.wmo.int/common/unit/",
+                    "@vocab": "https://api.weather.gov/ontology#",
+                    "geometry": {
+                        "@id": "s:GeoCoordinates",
+                        "@type": "geo:wktLiteral"
+                    },
+                    "city": "s:addressLocality",
+                    "state": "s:addressRegion",
+                    "distance": {
+                        "@id": "s:Distance",
+                        "@type": "s:QuantitativeValue"
+                    },
+                    "bearing": {
+                        "@type": "s:QuantitativeValue"
+                    },
+                    "value": {
+                        "@id": "s:value"
+                    },
+                    "unitCode": {
+                        "@id": "s:unitCode",
+                        "@type": "@id"
+                    },
+                    "forecastOffice": {
+                        "@type": "@id"
+                    },
+                    "forecastGridData": {
+                        "@type": "@id"
+                    },
+                    "publicZone": {
+                        "@type": "@id"
+                    },
+                    "county": {
+                        "@type": "@id"
+                    }
+                }
+            ],
+            "id": "https://api.weather.gov/points/39.9209,-104.9747",
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -104.9747,
+                    39.920900000000003
+                ]
+            },
+            "properties": {
+                "@id": "https://api.weather.gov/points/39.9209,-104.9747",
+                "@type": "wx:Point",
+                "cwa": "BOU",
+                "forecastOffice": "https://api.weather.gov/offices/BOU",
+                "gridId": "BOU",
+                "gridX": 63,
+                "gridY": 69,
+                "forecast": "https://api.weather.gov/gridpoints/BOU/63,69/forecast",
+                "forecastHourly": "https://api.weather.gov/gridpoints/BOU/63,69/forecast/hourly",
+                "forecastGridData": "https://api.weather.gov/gridpoints/BOU/63,69",
+                "observationStations": "https://api.weather.gov/gridpoints/BOU/63,69/stations",
+                "relativeLocation": {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                            -104.97884000000001,
+                            39.911166000000001
+                        ]
+                    },
+                    "properties": {
+                        "city": "Northglenn",
+                        "state": "CO",
+                        "distance": {
+                            "unitCode": "wmoUnit:m",
+                            "value": 1138.5063447810001
+                        },
+                        "bearing": {
+                            "unitCode": "wmoUnit:degree_(angle)",
+                            "value": 18
+                        }
+                    }
+                },
+                "forecastZone": "https://api.weather.gov/zones/forecast/COZ040",
+                "county": "https://api.weather.gov/zones/county/COC001",
+                "fireWeatherZone": "https://api.weather.gov/zones/fire/COZ240",
+                "timeZone": "America/Denver",
+                "radarStation": "KFTG"
+            }
+        }
+  recorded_at: Sun, 06 Nov 2022 17:24:54 GMT
+- request:
+    method: get
+    uri: https://api.weather.gov/gridpoints/BOU/63,69/forecast
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.20.1
+      Content-Type:
+      - application/geo+json
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Correlation-Id, X-Request-Id, X-Server-Id
+      X-Request-Id:
+      - 12bb44a4-ffd5-4cac-873c-a637031666a4
+      X-Correlation-Id:
+      - bde16c1
+      X-Server-Id:
+      - vm-lnx-nids-apiapp1.ncep.noaa.gov
+      Vary:
+      - Accept,Feature-Flags,Accept-Language
+      - Accept-Encoding
+      Cache-Control:
+      - public, max-age=3600, s-maxage=3600
+      Expires:
+      - Sun, 06 Nov 2022 18:24:55 GMT
+      Date:
+      - Sun, 06 Nov 2022 17:24:55 GMT
+      Content-Length:
+      - '11196'
+      Connection:
+      - keep-alive
+      X-Edge-Request-Id:
+      - fb71c608
+      Strict-Transport-Security:
+      - max-age=31536000 ; includeSubDomains ; preload
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+            "@context": [
+                "https://geojson.org/geojson-ld/geojson-context.jsonld",
+                {
+                    "@version": "1.1",
+                    "wx": "https://api.weather.gov/ontology#",
+                    "geo": "http://www.opengis.net/ont/geosparql#",
+                    "unit": "http://codes.wmo.int/common/unit/",
+                    "@vocab": "https://api.weather.gov/ontology#"
+                }
+            ],
+            "type": "Feature",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -104.9949228,
+                            39.937796300000002
+                        ],
+                        [
+                            -104.99280639999999,
+                            39.915819400000004
+                        ],
+                        [
+                            -104.96410119999999,
+                            39.917442800000003
+                        ],
+                        [
+                            -104.96621159999999,
+                            39.939419900000004
+                        ],
+                        [
+                            -104.9949228,
+                            39.937796300000002
+                        ]
+                    ]
+                ]
+            },
+            "properties": {
+                "updated": "2022-11-06T09:09:23+00:00",
+                "units": "us",
+                "forecastGenerator": "BaselineForecastGenerator",
+                "generatedAt": "2022-11-06T17:24:55+00:00",
+                "updateTime": "2022-11-06T09:09:23+00:00",
+                "validTimes": "2022-11-06T03:00:00+00:00/P7DT22H",
+                "elevation": {
+                    "unitCode": "wmoUnit:m",
+                    "value": 1605.0768
+                },
+                "periods": [
+                    {
+                        "number": 1,
+                        "name": "Today",
+                        "startTime": "2022-11-06T10:00:00-07:00",
+                        "endTime": "2022-11-06T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 51,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "falling",
+                        "windSpeed": "12 mph",
+                        "windDirection": "E",
+                        "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
+                        "shortForecast": "Mostly Cloudy",
+                        "detailedForecast": "Mostly cloudy. High near 51, with temperatures falling to around 48 in the afternoon. East wind around 12 mph."
+                    },
+                    {
+                        "number": 2,
+                        "name": "Tonight",
+                        "startTime": "2022-11-06T18:00:00-07:00",
+                        "endTime": "2022-11-07T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 30,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "5 to 10 mph",
+                        "windDirection": "WSW",
+                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                        "shortForecast": "Partly Cloudy",
+                        "detailedForecast": "Partly cloudy, with a low around 30. West southwest wind 5 to 10 mph."
+                    },
+                    {
+                        "number": 3,
+                        "name": "Monday",
+                        "startTime": "2022-11-07T06:00:00-07:00",
+                        "endTime": "2022-11-07T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 57,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": "falling",
+                        "windSpeed": "3 to 7 mph",
+                        "windDirection": "NW",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny. High near 57, with temperatures falling to around 51 in the afternoon. Northwest wind 3 to 7 mph."
+                    },
+                    {
+                        "number": 4,
+                        "name": "Monday Night",
+                        "startTime": "2022-11-07T18:00:00-07:00",
+                        "endTime": "2022-11-08T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 37,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "6 mph",
+                        "windDirection": "WSW",
+                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                        "shortForecast": "Partly Cloudy",
+                        "detailedForecast": "Partly cloudy, with a low around 37. West southwest wind around 6 mph."
+                    },
+                    {
+                        "number": 5,
+                        "name": "Tuesday",
+                        "startTime": "2022-11-08T06:00:00-07:00",
+                        "endTime": "2022-11-08T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 67,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "5 to 8 mph",
+                        "windDirection": "SSW",
+                        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+                        "shortForecast": "Mostly Sunny",
+                        "detailedForecast": "Mostly sunny, with a high near 67. South southwest wind 5 to 8 mph."
+                    },
+                    {
+                        "number": 6,
+                        "name": "Tuesday Night",
+                        "startTime": "2022-11-08T18:00:00-07:00",
+                        "endTime": "2022-11-09T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 38,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "9 mph",
+                        "windDirection": "SSW",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 38."
+                    },
+                    {
+                        "number": 7,
+                        "name": "Wednesday",
+                        "startTime": "2022-11-09T06:00:00-07:00",
+                        "endTime": "2022-11-09T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 66,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "9 to 15 mph",
+                        "windDirection": "SSW",
+                        "icon": "https://api.weather.gov/icons/land/day/few/rain_showers,20?size=medium",
+                        "shortForecast": "Sunny then Slight Chance Rain Showers",
+                        "detailedForecast": "A slight chance of rain showers after 5pm. Sunny, with a high near 66. Chance of precipitation is 20%."
+                    },
+                    {
+                        "number": 8,
+                        "name": "Wednesday Night",
+                        "startTime": "2022-11-09T18:00:00-07:00",
+                        "endTime": "2022-11-10T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 31,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "13 mph",
+                        "windDirection": "WSW",
+                        "icon": "https://api.weather.gov/icons/land/night/rain_showers/snow?size=medium",
+                        "shortForecast": "Chance Rain Showers then Chance Rain And Snow Showers",
+                        "detailedForecast": "A chance of rain showers before midnight, then a chance of rain and snow showers. Partly cloudy, with a low around 31."
+                    },
+                    {
+                        "number": 9,
+                        "name": "Thursday",
+                        "startTime": "2022-11-10T06:00:00-07:00",
+                        "endTime": "2022-11-10T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 47,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "10 mph",
+                        "windDirection": "WNW",
+                        "icon": "https://api.weather.gov/icons/land/day/snow?size=medium",
+                        "shortForecast": "Chance Snow Showers",
+                        "detailedForecast": "A chance of snow showers. Mostly sunny, with a high near 47."
+                    },
+                    {
+                        "number": 10,
+                        "name": "Thursday Night",
+                        "startTime": "2022-11-10T18:00:00-07:00",
+                        "endTime": "2022-11-11T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 22,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "5 to 8 mph",
+                        "windDirection": "SW",
+                        "icon": "https://api.weather.gov/icons/land/night/snow/few?size=medium",
+                        "shortForecast": "Slight Chance Snow Showers then Mostly Clear",
+                        "detailedForecast": "A slight chance of snow showers before 11pm. Mostly clear, with a low around 22."
+                    },
+                    {
+                        "number": 11,
+                        "name": "Veterans Day",
+                        "startTime": "2022-11-11T06:00:00-07:00",
+                        "endTime": "2022-11-11T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 45,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "7 mph",
+                        "windDirection": "SE",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 45."
+                    },
+                    {
+                        "number": 12,
+                        "name": "Friday Night",
+                        "startTime": "2022-11-11T18:00:00-07:00",
+                        "endTime": "2022-11-12T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 21,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "6 mph",
+                        "windDirection": "SW",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 21."
+                    },
+                    {
+                        "number": 13,
+                        "name": "Saturday",
+                        "startTime": "2022-11-12T06:00:00-07:00",
+                        "endTime": "2022-11-12T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 45,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "7 mph",
+                        "windDirection": "ENE",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny, with a high near 45."
+                    },
+                    {
+                        "number": 14,
+                        "name": "Saturday Night",
+                        "startTime": "2022-11-12T18:00:00-07:00",
+                        "endTime": "2022-11-13T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 23,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "6 mph",
+                        "windDirection": "NW",
+                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                        "shortForecast": "Partly Cloudy",
+                        "detailedForecast": "Partly cloudy, with a low around 23."
+                    }
+                ]
+            }
+        }
+  recorded_at: Sun, 06 Nov 2022 17:24:55 GMT
+recorded_with: VCR 6.1.0
