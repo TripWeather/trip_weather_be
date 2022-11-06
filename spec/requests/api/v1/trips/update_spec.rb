@@ -10,8 +10,8 @@ RSpec.describe 'Trips API | Update' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
-          departure_date: DateTime.now + 2.0,
-          arrival_date: DateTime.now + 5
+          departure_date: Time.current + 30.seconds,
+          arrival_date: Time.current + 10.days
         }
         headers = { CONTENT_TYPE: 'application/json' }
 
@@ -20,25 +20,42 @@ RSpec.describe 'Trips API | Update' do
         expect(response).to have_http_status(200)
 
         trip_response = JSON.parse(response.body, symbolize_names: true)
-        update_trip_obj_check(trip_response[:data][0], trip)
+        update_trip_obj_check(trip_response[:data], trip)
       end
     end
 
     context('Edge Case') do
-      xit 'returns bad request if date is in past' do
+      it 'returns Unprocessable Entity if date is in past' do
         trip = {
           uid: Faker::Number.number(digits: 10).to_s,
           name: Faker::Movies::StarWars.planet,
-          departure_date: DateTime.now + 2.0,
-          arrival_date: DateTime.now - 5
+          departure_date: Time.current + 5.days,
+          arrival_date: Time.current - 5.days
         }
         headers = { CONTENT_TYPE: 'application/json' }
         put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
 
-        expect(response).to have_http_status(400)
+        expect(response).to have_http_status(422)
+
 
         error_response = JSON.parse(response.body, symbolize_names: true)
-        update_bad_request_check(error_response)
+        update_unproc_entity_check(error_response, ["Arrival date can't be in the past", "Arrival date can't before departure date"])
+      end
+
+      it 'returns Unprocessable Entity if arrival date is before departure date' do
+        trip = {
+          uid: Faker::Number.number(digits: 10).to_s,
+          name: Faker::Movies::StarWars.planet,
+          departure_date: Time.current + 5.days,
+          arrival_date: Time.current + 2.days
+        }
+        headers = { CONTENT_TYPE: 'application/json' }
+        put api_v1_trip_path('1000', @trip), headers: headers, params: JSON.generate(trip: trip)
+
+        expect(response).to have_http_status(422)
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+        update_unproc_entity_check(error_response, ["Arrival date can't before departure date"])
       end
     end
   end
@@ -47,13 +64,13 @@ RSpec.describe 'Trips API | Update' do
     expect(trip_response[:type]).to eq 'trip'
     expect(trip_response[:attributes][:uid]).to eq trip[:uid]
     expect(trip_response[:attributes][:name]).to eq trip[:name]
-    expect(trip_response[:attributes][:departure_date]).to be_an String
-    expect(trip_response[:attributes][:arrival_date]).to be_an String
+    expect(trip_response[:attributes][:departure_date]).to eq trip[:departure_date].strftime('%FT%T.000Z')
+    expect(trip_response[:attributes][:arrival_date]).to eq trip[:arrival_date].strftime('%FT%T.000Z')
   end
 
-  def update_bad_request_check(error_response)
-    expect(error_response[:errors][0][:status]).to eq '400'
-    expect(error_response[:errors][0][:title]).to eq 'Bad Request'
-    expect(error_response[:errors][0][:detail]).to eq 'Date cannot be in the past'
+  def update_unproc_entity_check(error_response, errors)
+    expect(error_response[:errors][0][:status]).to eq '422'
+    expect(error_response[:errors][0][:title]).to eq 'Unprocessable Entity'
+    expect(error_response[:errors][0][:detail]).to eq errors
   end
 end

@@ -4,8 +4,8 @@ FactoryBot.define do
   factory :trip do
     uid { Faker::Number.number(digits: 10).to_s }
     name { Faker::Movies::StarWars.planet }
-    departure_date { Faker::Time.forward(days: 5, period: :morning) }
-    arrival_date { Faker::Time.forward(days: 10, period: :morning) }
+    departure_date { (Time.current + Faker::Number.number(digits: 1).days) }
+    arrival_date { (departure_date + Faker::Number.within(range: 2..5).days) }
   end
 end
 
