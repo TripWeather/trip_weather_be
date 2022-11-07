@@ -3,20 +3,30 @@
 ## Schema / Database
 
 <p align="center">
-  <img src="" />
+  <img src="https://github.com/TripWeather/.github/blob/main/profile/assets/BE_DB.png?raw=true" />
 </p>
 
 ## Available API End Points
 
-### `GET  /api/v1/users` or `GET https://trip-weather-2022.herokuapp.com/api/v1/users`
+### `GET  /api/v1/weather`+ params or `http://localhost:3000/api/v1/weather?"200 E Colfax Ave, Denver, CO 80203"`
 
 Returns all the users with their attributes.
 
 ```json
 {
+    "data": {
+        "id": "1",
+        "type": "weather",
+        "attributes": {
+            "name": "Today",
+            "temperature": 61,
+            "short_forecast": "Sunny",
+            "detailed_forecast": "Sunny. High near 61, with temperatures falling to around 51 in the afternoon. Northwest wind 7 to 10 mph."
+        }
+    }
 }
 ```
-### GET
+### GET `GET  /api/v1/nav`
 
 ## Local Setup
 
