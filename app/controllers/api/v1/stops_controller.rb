@@ -17,6 +17,10 @@ module Api
                                                      type_of_stop: stop_params[:type_of_stop])), status: 201
       end
 
+      def destroy
+        Stop.destroy(params[:id])
+      end
+
       private
 
       def stop_params
