@@ -17,9 +17,7 @@ RSpec.describe WeatherService, :vcr do
       forecast_call = WeatherService.forecast_data(39.7456, -97.0892)
 
       expect(forecast_call[:properties][:periods][0][:temperature]).to be_an(Integer)
-
       expect(forecast_call[:properties][:periods][0][:shortForecast]).to be_an(String)
-
       expect(forecast_call[:properties][:periods][0][:detailedForecast]).to be_an(String)
     end
   end
