@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get '/weather', to: 'weather#index'
       scope ':user_id' do
         resources :trips do
-          resources :stops, only: %i[index show] do
+          resources :stops do
             resources :addresses, only: %i[show]
           end
         end
