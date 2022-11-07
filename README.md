@@ -1,5 +1,7 @@
 # Back End Repository for Trip Weather
 
+[Deployed BE Heroku Site](https://trip-weather-2022.herokuapp.com/api/v1/)
+
 ## Schema / Database
 
 <p align="center">
@@ -8,9 +10,16 @@
 
 ## Available API End Points
 
-### `GET  /api/v1/weather`+ params or `http://localhost:3000/api/v1/weather?"200 E Colfax Ave, Denver, CO 80203"`
+### Weather End Point
+Returns the weather forecast for a given address
 
-Returns all the users with their attributes.
+`GET  /api/v1/weather + params` 
+or
+`https://trip-weather-2022.herokuapp.com/api/v1/weather?{address}`
+
+example:
+
+`http://localhost:3000/api/v1/weather?"200 E Colfax Ave, Denver, CO 80203"`
 
 ```json
 {
@@ -26,8 +35,113 @@ Returns all the users with their attributes.
     }
 }
 ```
-### GET `GET  /api/v1/nav`
+### Navigation End Point
 
+`GET  /api/v1/nav`
+or
+
+
+### Trips End Points
+
+#### Trips Index
+
+Returns all the trips for a given user
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "trip",
+            "attributes": {
+                "uid": "1000",
+                "name": "Test_Trip",
+                "departure_date": "2022-11-07T18:41:30.233Z",
+                "arrival_date": "2022-11-09T18:41:00.235Z"
+            },
+            "relationships": {
+                "stops": {
+                    "data": [
+                        {
+                            "id": "1",
+                            "type": "stop"
+                        },
+                        {
+                            "id": "2",
+                            "type": "stop"
+                        }
+                    ],
+                    "links": {
+                        "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1"
+            }
+        },
+        {
+            "id": "2",
+            "type": "trip",
+            "attributes": {
+                "uid": "1000",
+                "name": "Test_Trip_2",
+                "departure_date": "2022-11-07T18:41:30.274Z",
+                "arrival_date": "2022-11-12T18:41:00.274Z"
+            },
+            "relationships": {
+                "stops": {
+                    "data": [
+                        {
+                            "id": "3",
+                            "type": "stop"
+                        },
+                        {
+                            "id": "4",
+                            "type": "stop"
+                        }
+                    ],
+                    "links": {
+                        "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/2/stops/"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/2"
+            }
+        },
+        {
+            "id": "3",
+            "type": "trip",
+            "attributes": {
+                "uid": "1000",
+                "name": "Test_Trip_3",
+                "departure_date": "2022-11-07T18:41:30.279Z",
+                "arrival_date": "2022-11-17T18:41:00.279Z"
+            },
+            "relationships": {
+                "stops": {
+                    "data": [
+                        {
+                            "id": "5",
+                            "type": "stop"
+                        },
+                        {
+                            "id": "6",
+                            "type": "stop"
+                        }
+                    ],
+                    "links": {
+                        "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/3/stops/"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/3"
+            }
+        }
+    ]
+}
+```
 ## Local Setup
 
 This project requires Ruby 2.7.x
@@ -42,9 +156,9 @@ This project requires Ruby 2.7.x
 
 ## Versions
 
-- Ruby 2.7.x
+- Ruby 2.7.4
 
-- Rails 5.2.6
+- Rails 5.2.8
 
 ## Contributors
 
