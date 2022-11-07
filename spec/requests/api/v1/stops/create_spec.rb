@@ -20,7 +20,7 @@ RSpec.describe 'Stops API | Create' do
         expect(response).to have_http_status(201)
 
         stop_response = JSON.parse(response.body, symbolize_names: true)
-        create_stop_obj_check(stop_response[:data], stop)
+        create_stop_obj_check(stop_response[:data])
       end
     end
 
@@ -58,7 +58,7 @@ RSpec.describe 'Stops API | Create' do
       end
     end
   end
-  def create_stop_obj_check(stop_response, stop)
+  def create_stop_obj_check(stop_response)
     expect(stop_response[:id]).to be_an String
     expect(stop_response[:type]).to eq 'stop'
     expect(stop_response[:attributes]).to be_an Hash
