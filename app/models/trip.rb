@@ -15,6 +15,10 @@ class Trip < ApplicationRecord
   validates :departure_date, presence: true
   validates :arrival_date, presence: true
 
+  def ordered_stops
+    stops.order(:type_of_stop)
+  end
+
   private
 
   def destroy_addresses
