@@ -4,11 +4,11 @@ require 'rails_helper'
 
 RSpec.describe 'Stops API | Create' do
   describe 'Stop Create' do
+    let!(:load_trip) { @trip = create(:trip) }
     context('Happy Path') do
-      let!(:load_trip) { @trip = create(:trip) }
       it 'creates a stop and automatically associates it to a trip' do
         stop = {
-          type_of_stop: 'start',
+          type_of_stop: 0,
           location: Faker::Address.full_address
         }
         headers = { CONTENT_TYPE: 'application/json' }
@@ -25,23 +25,44 @@ RSpec.describe 'Stops API | Create' do
     end
 
     context('Edge Case') do
-      # let!(:load_obj) { @trip = trip_initialize_has_many('1000') }
-      # it 'returns 404 if stop not found with :id' do
-      #   id = 0
-      #   get api_v1_trip_stop_path('1000', @trip, id)
-      #   expect(response).to have_http_status(404)
-      #
-      #   error_response = JSON.parse(response.body, symbolize_names: true)
-      #   show_not_found_check(error_response, id)
-      # end
+      it 'returns an error message if missing :type_of_stop' do
+        stop = {
+          location: Faker::Address.full_address
+        }
+        headers = { CONTENT_TYPE: 'application/json' }
+
+        expect do
+          post api_v1_trip_stops_path('1000', @trip), headers: headers, params: JSON.generate(stop: stop)
+        end.to change(Stop, :count).by(0)
+
+        expect(response).to have_http_status(422)
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+        create_unproc_entity_check(error_response, ["Type of stop can't be blank"])
+      end
+
+      it 'returns an error message if missing :location' do
+        stop = {
+          type_of_stop: 2
+        }
+        headers = { CONTENT_TYPE: 'application/json' }
+
+        expect do
+          post api_v1_trip_stops_path('1000', @trip), headers: headers, params: JSON.generate(stop: stop)
+        end.to change(Stop, :count).by(0)
+
+        expect(response).to have_http_status(422)
+
+        error_response = JSON.parse(response.body, symbolize_names: true)
+        create_unproc_entity_check(error_response, ["Location can't be blank"])
+      end
     end
   end
-  def create_stop_type_check(stop_response, stop)
+  def create_stop_obj_check(stop_response, stop)
     expect(stop_response[:id]).to be_an String
     expect(stop_response[:type]).to eq 'stop'
     expect(stop_response[:attributes]).to be_an Hash
-    expect(stop_response.dig(:attributes, :type_of_stop)).to eq stop[:type_of_stop]
-    expect(stop_response.address).to eq stop[:location]
+    expect(stop_response.dig(:attributes, :type_of_stop)).to eq 'start'
   end
 
   def create_unproc_entity_check(error_response, errors)
