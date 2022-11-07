@@ -33,16 +33,14 @@ class Trip < ApplicationRecord
   end
 
   def departure_cannot_be_in_past
-    return unless departure_date.present? && departure_date < (Time.current - 30.seconds)
+    return unless departure_date.present? && departure_date < (Time.current - 30.minutes)
 
     errors.add(:departure_date, "can't be in the past")
   end
 
   def arrival_cannot_be_in_past
-    return unless arrival_date.present? && arrival_date < (Time.current - 30.seconds)
+    return unless arrival_date.present? && arrival_date < (Time.current - 30.minutes)
 
     errors.add(:arrival_date, "can't be in the past")
   end
-
-  
 end
