@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       scope ':user_id' do
         resources :trips do
           resources :stops, except: %i[new update] do
-            resources :addresses, only: %i[show]
+            resources :addresses, only: %i[show update]
           end
         end
       end
