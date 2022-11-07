@@ -3,6 +3,7 @@
 class WeatherFacade < WeatherService
   def self.forecast(latitude, longitude)
     forecast_response = forecast_data(latitude, longitude)
+    # require 'pry'; binding.pry
     weather_attr_hash = forecast_response[:properties][:periods][0].slice(:name, :temperature, :shortForecast, :detailedForecast)
     Weather.new(weather_attr_hash)
   end
@@ -34,9 +35,7 @@ class WeatherFacade < WeatherService
     end
     departure_day = day_of_week(departure_date)
     starting_coord = LatLongFacade.lat_long_object(start_address)
-    if difference_of_days_between_now_and_departure > 7 
-      flash.notice = "Weather data for start address not available, check within 7 days of departure"
-    else
+    if difference_of_days_between_now_and_departure < 7 
       selected_forecasts = forecast_for_day(starting_coord.latitude, starting_coord.longitude, departure_day)
     end
     convert_forecast_data_to_weather_obj(selected_forecasts)
@@ -49,9 +48,7 @@ class WeatherFacade < WeatherService
     end
     arrival_day = day_of_week(arrival_date)
     end_coord = LatLongFacade.lat_long_object(end_address)
-    if difference_of_days_between_now_and_arrival_date > 7 
-      flash.notice = "Weather data for end address not available, check within 7 days of arrival"
-    else
+    if difference_of_days_between_now_and_arrival_date < 7 
       selected_forecasts = forecast_for_day(end_coord.latitude, end_coord.longitude, arrival_day)
     end
     convert_forecast_data_to_weather_obj(selected_forecasts)
