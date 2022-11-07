@@ -43,4 +43,6 @@ class Trip < ApplicationRecord
 
     errors.add(:arrival_date, "can't be in the past")
   end
+
+  
 end

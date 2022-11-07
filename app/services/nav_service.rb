@@ -6,14 +6,14 @@ class NavService
   end
 
   def self.route_directions(start_address, end_address)
-    response = connection.get("/directions/v2/route?from=#{start_address}&to=#{end_address}")
+    response = connection.get("/directions/v2/route", {from: start_address, to: end_address})
     parse(response)
   end
-
+  
   def self.connection
-    Faraday.new(
+     Faraday.new(
       url: 'http://www.mapquestapi.com',
       params: { key: ENV['NAV_API'] }
-    )
+      )
   end
 end
