@@ -16,6 +16,9 @@ module Api
       end
 
       def create
+        params[:trip][:departure_date] = Time.parse(params[:trip][:departure_date]).strftime("%a, %d %b %Y %H:%M:%S")
+        params[:trip][:arrival_date] = Time.parse(params[:trip][:arrival_date]).strftime("%a, %d %b %Y %H:%M:%S")
+        binding.pry
         render json: TripSerializer.new(Trip.create!(trip_params)), status: 201
       end
 
