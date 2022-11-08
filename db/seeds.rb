@@ -29,6 +29,13 @@ address_2 = Address.create!(location: '418 Bogan Roads, South Renea, NJ 89316-93
 Stop.create!(trip_id: trip.id, address_id: address_1.id, type_of_stop: 0)
 Stop.create!(trip_id: trip.id, address_id: address_2.id, type_of_stop: 2)
 
+trip = Trip.create!(uid: '1000', name: 'Test_Trip_4', departure_date: Time.current + 30.seconds,
+                    arrival_date: Time.current + 10.days)
+address_1 = Address.create!(location: 'Suite 158 8439 Pagac Square, Aletaside, PA 35194-2888')
+address_2 = Address.create!(location: '418 Bogan Roads, South Renea, NJ 89316-9333')
+Stop.create!(trip_id: trip.id, address_id: address_1.id, type_of_stop: 0)
+Stop.create!(trip_id: trip.id, address_id: address_2.id, type_of_stop: 2)
+
 trip = Trip.create!(uid: '106758666395730546327', name: 'Stephen Trip', departure_date: Time.current + 30.seconds,
                     arrival_date: Time.current + 2.days)
 address_1 = Address.create!(location: '1600 Pennsylvania Ave NW, Washington DC')
