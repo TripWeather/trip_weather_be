@@ -691,31 +691,65 @@ or
 #### Trips Stops Create
 
 
-`` 
-or
-``
+`POST /api/v1/{:uid}/trips/{:trip_id}/stops` 
 
+or
+
+`POST https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops`
 
 <b>Example Input:</b>
-``
+`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops`
+
+```json
+{
+    "stop": {"type_of_stop": "start", 
+    "location": "200 E Colfax Ave, Denver, CO 80203"}
+}
+```
 <b>Example Output:</b>
 ```json
-
+{
+    "data": {
+        "id": "1",
+        "type": "stop",
+        "attributes": {
+            "type_of_stop": "start"
+        },
+        "relationships": {
+            "address": {
+                "data": {
+                    "id": "1",
+                    "type": "address"
+                },
+                "links": {
+                    "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1"
+                }
+            }
+        },
+        "links": {
+            "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1"
+        }
+    }
+}
 ```
 
 #### Trips Stops Destroy
 
 
-`` 
-or
-``
+`DELETE /api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}`
 
+or
+
+`DELETE https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}`
 
 <b>Example Input:</b>
-``
-<b>Example Output:</b>
-```json
 
+`DELETE https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1`
+
+<b>Example Output:</b>
+
+```json
+204 No Content
 ```
 
 ### Trip Stops Addresses 
