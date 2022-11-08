@@ -19,13 +19,13 @@ class Trip < ApplicationRecord
     stops.order(:type_of_stop)
   end
 
-  private
-
   def arrival_date_calculation(start_date, start_address, end_address)
     trip_details_hash = NavFacade.trip_details(start_address, end_address)
     time_to_end_address_in_seconds = trip_details_hash[:realTime]
     estimated_arrival_date = start_date.to_datetime + time_to_end_address_in_seconds.seconds
   end
+
+  private
 
   def destroy_addresses
     addresses.destroy_all
