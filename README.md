@@ -40,11 +40,11 @@ Returns the weather forecast for a given address
 
 `GET  /api/v1/weather + params` 
 or
-`https://trip-weather-2022.herokuapp.com/api/v1/weather?{address}`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/weather?{address}`
 
 example:
 
-`https://trip-weather-2022.herokuapp.com/api/v1/weather?"200 E Colfax Ave, Denver, CO 80203"`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/weather?"200 E Colfax Ave, Denver, CO 80203"`
 
 ```json
 {
@@ -68,12 +68,12 @@ Returns the step by step directions from a `start address` to an `end address`
 
 or
 
-`https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address={address}&end_address={address}%id=1`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address={address}&end_address={address}%id=1`
 
 
-<b>Example:</b>
+<b>Example Output:</b>
 
-`https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address=200 E Colfax Ave, Denver, CO 80203&end_address=1600 Pennsylvania Avenue NW, Washington, DC 20500&id=1` 
+`GET https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address=200 E Colfax Ave, Denver, CO 80203&end_address=1600 Pennsylvania Avenue NW, Washington, DC 20500&id=1` 
 
 ```json
 {
@@ -304,11 +304,11 @@ Returns all the trips for a given user
 
 or
 
-`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips` 
+`GET https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips` 
 
 
-<b>Example:</b>
-`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips` 
+<b>Example Output:</b>
+`GET https://trip-weather-2022.herokuapp.com/api/v1/1000/trips` 
 
 ```json
 {
@@ -385,12 +385,12 @@ Returns individual trip details and the number of stops, along with the related 
 
 or
 
-`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}` 
+`GET https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}` 
 
 
-<b>Example:</b>
+<b>Example Output:</b>
 
-`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/`
 
 ```json
 {
@@ -436,7 +436,7 @@ or
 
 `POST https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips`
 
-example POST input:
+<b>Example Input:</b>
 
 `POST https://trip-weather-2022.herokuapp.com/api/v1/1000/trips`
 
@@ -450,7 +450,7 @@ example POST input:
     }
 }
 ```
-example output:
+<b>Example Output:</b>
 ```json
 {
     "data": {
@@ -486,7 +486,9 @@ or
 
 `PATCH https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}`
 
-original trip details:
+<b>Example:</b>
+
+Original Trip Details
 ```json
 {
     "data": {
@@ -512,9 +514,9 @@ original trip details:
     }
 }
 ```
-example PATCH input:
+<b>Example Input:</b>
 
-`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4`
+`PATCH https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4`
 
 ```json
 {
@@ -526,7 +528,7 @@ example PATCH input:
     }
 }
 ```
-example output:
+<b>Example Output:</b>
 ```json
 {
     "data": {
@@ -560,7 +562,7 @@ example output:
 or
 `DELETE https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}`
 
-example:
+<b>Example Output:</b>
 
 `DELETE https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4`
 
@@ -578,12 +580,12 @@ Returns all the stops of a given trip
 
 or
 
-`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops`
 
 
 <b>Example:</b>
 
-`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops`
 
 ```json
 {
@@ -641,12 +643,12 @@ Returns Details on a specific stop
 
 or
 
-`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}`
 
 
 <b>Example:</b>
 
-`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1`
 
 ```json
 {
@@ -681,7 +683,7 @@ or
 or
 ``
 
-example:
+<b>Example Output:</b>
 
 ``
 
@@ -696,7 +698,7 @@ example:
 or
 ``
 
-example:
+<b>Example Output:</b>
 
 ``
 
@@ -713,12 +715,12 @@ Returns Address of a specific stop
 
 or
 
-`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}/addresses/{:address_id}`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}/addresses/{:address_id}`
 
 
-<b>Example:</b>
+<b>Example Output:</b>
 
-`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1`
+`GET https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1`
 
 ```json
 {
@@ -733,20 +735,51 @@ or
 ```
 
 #### Trips Stops Address Update
+Lets you update the address of a given stop
 
+`PATCH /api/v1/:user_id/trips/:trip_id/stops/:stop_id/addresses/:address_id` 
 
-`` 
 or
-``
 
-example:
+`PATCH https://trip-weather-2022.herokuapp.com/api/v1/:user_id/trips/:trip_id/stops/:stop_id/addresses/:address_id`
 
-``
+<b>Example:</b>
 
+`PATCH https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1`
+
+Original address:
 ```json
-
+{
+    "data": {
+        "id": "1",
+        "type": "address",
+        "attributes": {
+            "location": "1600 Pennsylvania Ave NW, Washington DC"
+        }
+    }
+}
 ```
-
+<b>Example Input:</b>
+```json
+{
+    "address": {
+        "location": "900 Court St NE, Salem, OR 97301"
+    }
+}
+```
+<b>Example Output:</b>
+```json
+{
+    "data": {
+        "id": "1",
+        "type": "address",
+        "attributes": {
+            "location": "900 Court St NE, Salem, OR 97301"
+        }
+    }
+}
+```
+##
 ## Local Setup
 
 * Fork this repository
