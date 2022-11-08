@@ -14,7 +14,7 @@ module Api
       def create
         address = Address.create!(location: stop_params[:location])
         render json: StopSerializer.new(Stop.create!(trip_id: params[:trip_id], address_id: address.id,
-                                                     type_of_stop: stop_params[:type_of_stop])), status: 201
+                                                     type_of_stop: stop_params[:type_of_stop].to_i)), status: 201
       end
 
       def destroy
