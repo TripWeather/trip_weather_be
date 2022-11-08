@@ -11,11 +11,20 @@
 - [Trips End Points](#trips-end-points)
     - [Index](#trips-index)
     - [Show](#trips-show)
-        - [Trips Stops Index](#trips-stops-index) -- ??should i just name it Stops?
-        - [Trips Stops Show](#trips-stops-show)
-        - [Trips Stops Addresses](#trips-stops-addresses)
-
-3. [Contributors](#contributors)
+    - [Create](#trips-create)
+    - [Update](#trips-update)
+    - [Destroy](#trips-destroy)
+- [Stops End Points](#trip-stops-end-points)
+    - [Index](#trips-stops-index) 
+    - [Show](#trips-stops-show)
+    - [Create](#trips-stops-create)
+    - [Destroy](#trips-stops-destroy)
+- [Address End Points](#trip-stops-addresses)
+    - [Show](#trips-stops-address-show)
+    - [Update](#trips-stops-address-update)
+3. [Local Setup](#local-setup)
+4. [Versions](#versions)
+5. [Contributors](#contributors)
 
 
 ## Architecture and Design
@@ -51,15 +60,18 @@ example:
     }
 }
 ```
-
+##
 ### Navigation End Point
+Returns the step by step directions from a `start address` to an `end address`
 
-`GET  /api/v1/nav`
+`GET  /api/v1/nav + params`
+
 or
+
 `https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address={address}&end_address={address}%id=1`
 
 
-example:
+<b>Example:</b>
 
 `https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address=200 E Colfax Ave, Denver, CO 80203&end_address=1600 Pennsylvania Avenue NW, Washington, DC 20500&id=1` 
 
@@ -282,17 +294,20 @@ example:
     }
 }
 ```
-
+##
 ### Trips End Points
 
 #### Trips Index
 Returns all the trips for a given user
 
 `GET  /api/v1/:uid/trips` 
+
 or
+
 `https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips` 
 
-example:
+
+<b>Example:</b>
 `https://trip-weather-2022.herokuapp.com/api/v1/1000/trips` 
 
 ```json
@@ -362,14 +377,18 @@ example:
 }
 ```
 
+
 #### Trips Show
 Returns individual trip details and the number of stops, along with the related links to stops
 
 `GET  /api/v1/:uid/trips/:trip_id` 
+
 or
+
 `https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}` 
 
-example:
+
+<b>Example:</b>
 
 `https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/`
 
@@ -408,14 +427,65 @@ example:
 }
 ```
 
+#### Trips Create
+
+
+`` 
+or
+``
+
+example:
+
+``
+
+```json
+
+```
+
+#### Trips Update
+
+
+`` 
+or
+``
+
+example:
+
+``
+
+```json
+
+```
+
+#### Trips Destroy
+
+
+`` 
+or
+``
+
+example:
+
+``
+
+```json
+
+```
+##
+
+### Trip Stops End Points
+
 #### Trips Stops Index
 Returns all the stops of a given trip
 
-`GET  /api/v1/{:uid}/trips/{:trip_id}/stops` 
+`GET  /api/v1/{:uid}/trips/{:trip_id}/stops`
+
 or
+
 `https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops`
 
-example:
+
+<b>Example:</b>
 
 `https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops`
 
@@ -472,10 +542,13 @@ example:
 Returns Details on a specific stop
 
 `GET  /api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}` 
+
 or
+
 `https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}`
 
-example:
+
+<b>Example:</b>
 
 `https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1`
 
@@ -505,8 +578,78 @@ example:
 }
 ```
 
-#### Trips Stops Addresses
+#### Trips Stops Create
 
+
+`` 
+or
+``
+
+example:
+
+``
+
+```json
+
+```
+
+#### Trips Stops Destroy
+
+
+`` 
+or
+``
+
+example:
+
+``
+
+```json
+
+```
+
+### Trip Stops Addresses 
+
+#### Trips Stops Address Show
+Returns Address of a specific stop
+
+`GET  /api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}/addresses/{:address_id}` 
+
+or
+
+`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}/addresses/{:address_id}`
+
+
+<b>Example:</b>
+
+`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1`
+
+```json
+{
+    "data": {
+        "id": "1",
+        "type": "address",
+        "attributes": {
+            "location": "1600 Pennsylvania Ave NW, Washington DC"
+        }
+    }
+}
+```
+
+#### Trips Stops Address Update
+
+
+`` 
+or
+``
+
+example:
+
+``
+
+```json
+
+```
 
 ## Local Setup
 
