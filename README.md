@@ -428,48 +428,144 @@ or
 ```
 
 #### Trips Create
+Allows you to create a trip
 
+`POST /api/v1/:uid/trips` 
 
-`` 
 or
-``
 
-example:
+`POST https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips`
 
-``
+example POST input:
+
+`POST https://trip-weather-2022.herokuapp.com/api/v1/1000/trips`
 
 ```json
-
+{
+    "trip": {
+    "uid": "1000",
+    "name": "Grand Adventure",
+    "departure_date": "2022-11-30 15:00",
+    "arrival_date": "2024-11-10T13:37:38.000Z"
+    }
+}
+```
+example output:
+```json
+{
+    "data": {
+        "id": "4",
+        "type": "trip",
+        "attributes": {
+            "uid": "1000",
+            "name": "Grand Adventure",
+            "departure_date": "2022-11-30T15:00:00.000Z",
+            "arrival_date": "2024-11-10T13:37:38.000Z"
+        },
+        "relationships": {
+            "stops": {
+                "data": [],
+                "links": {
+                    "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4/stops/"
+                }
+            }
+        },
+        "links": {
+            "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4"
+        }
+    }
+}
 ```
 
 #### Trips Update
+Will let you update trip attributes
 
+`PATCH /api/v1/:uid/trips/:trip_id` 
 
-`` 
 or
-``
 
-example:
+`PATCH https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}`
 
-``
+original trip details:
+```json
+{
+    "data": {
+        "id": "4",
+        "type": "trip",
+        "attributes": {
+            "uid": "1000",
+            "name": "Grand Adventure",
+            "departure_date": "2022-11-30T15:00:00.000Z",
+            "arrival_date": "2024-11-10T13:37:38.000Z"
+        },
+        "relationships": {
+            "stops": {
+                "data": [],
+                "links": {
+                    "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4/stops/"
+                }
+            }
+        },
+        "links": {
+            "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4"
+        }
+    }
+}
+```
+example PATCH input:
+
+`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4`
 
 ```json
-
+{
+    "trip": {
+    "uid": "1000",
+    "name": "Grand EXTRA Adventure",
+    "departure_date": "2022-11-30 15:00",
+    "arrival_date": "2024-11-10T13:37:38.000Z"
+    }
+}
+```
+example output:
+```json
+{
+    "data": {
+        "id": "4",
+        "type": "trip",
+        "attributes": {
+            "uid": "1000",
+            "name": "Grand EXTRA Adventure",
+            "departure_date": "2022-11-30T15:00:00.000Z",
+            "arrival_date": "2024-11-10T13:37:38.000Z"
+        },
+        "relationships": {
+            "stops": {
+                "data": [],
+                "links": {
+                    "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4/stops/"
+                }
+            }
+        },
+        "links": {
+            "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4"
+        }
+    }
+}
 ```
 
 #### Trips Destroy
 
 
-`` 
+`DELETE /api/v1/:uid/trips/:trip_id` 
 or
-``
+`DELETE https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}`
 
 example:
 
-``
+`DELETE https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/4`
 
 ```json
-
+Status 204 No Content
 ```
 ##
 
