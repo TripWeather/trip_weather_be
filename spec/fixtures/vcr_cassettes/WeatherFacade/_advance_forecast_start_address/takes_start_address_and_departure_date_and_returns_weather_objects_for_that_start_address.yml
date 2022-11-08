@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 08 Nov 2022 01:59:00 GMT
+      - Tue, 08 Nov 2022 21:03:04 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -35,7 +35,7 @@ http_interactions:
       Cache-Control:
       - no-cache, private
       X-Apilayer-Transaction-Id:
-      - c2efae8c-7100-4c79-adec-508226ca1ff7
+      - 52fa8bca-aba3-42f3-b12c-9f254d318145
       Access-Control-Allow-Origin:
       - "*"
       Access-Control-Allow-Methods:
@@ -45,21 +45,21 @@ http_interactions:
       X-Quota-Limit:
       - '25000'
       X-Quota-Remaining:
-      - '24899'
+      - '24893'
       X-Increment-Usage:
       - '1'
       X-Request-Time:
-      - '0.133'
+      - '0.190'
       Cf-Cache-Status:
       - DYNAMIC
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=52dHRgFz%2FCenQsW0YKIkrqg5Tu15JbROs7tv3gq3rt48TdQm0IEW1K%2B%2F99zDAkjlV%2Fm%2B9h4mFuK3mLZizNjG%2BF2DajvlS%2BG%2BmBaXjg931XAbsDHOD6qfQ4ne74xOtgQgPvB4CIZecLo%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Q0H%2F6iOp8LBtjrIShzG13HkXN98aDcRUxd4%2Fj8wqeknODHF0W0If4%2Bx02vA1z6bcti2G2bPcwYEiZIuJZZ6EhwqX4UdlCf6zbUYT2rMgThBfYV7xW6OgqHfaIIx5F6uylYC%2B%2Bk8cBY0%3D"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 766ab4f1cfede7df-DFW
+      - 767140cfee892542-SJC
       Alt-Svc:
       - h3=":443"; ma=86400, h3-29=":443"; ma=86400
     body:
@@ -75,7 +75,7 @@ http_interactions:
         County","locality":"Wheat Ridge","administrative_area":null,"neighbourhood":null,"country":"United
         States","country_code":"USA","continent":"North America","label":"3210 Youngfield
         Street, Wheat Ridge, CO, USA"}]}'
-  recorded_at: Tue, 08 Nov 2022 01:59:00 GMT
+  recorded_at: Tue, 08 Nov 2022 21:03:03 GMT
 - request:
     method: get
     uri: https://api.weather.gov/points/39.7622,-105.1418
@@ -103,26 +103,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - 6559b484-f7c4-4a99-893c-23b685bd3bfa
+      - 8a7a3fcc-8546-4377-98da-69792fc09c25
       X-Correlation-Id:
-      - 1fd4aea
+      - fd1b87b
       X-Server-Id:
-      - vm-lnx-nids-apiapp2.ncep.noaa.gov
+      - vm-lnx-nids-apiapp6.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=86367, s-maxage=120
+      - public, max-age=86374, s-maxage=120
       Expires:
-      - Wed, 09 Nov 2022 01:58:27 GMT
+      - Wed, 09 Nov 2022 21:02:38 GMT
       Date:
-      - Tue, 08 Nov 2022 01:59:00 GMT
+      - Tue, 08 Nov 2022 21:03:04 GMT
       Content-Length:
       - '3063'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - 26fc27c5
+      - 22d32967
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -222,7 +222,7 @@ http_interactions:
                 "radarStation": "KFTG"
             }
         }
-  recorded_at: Tue, 08 Nov 2022 01:59:00 GMT
+  recorded_at: Tue, 08 Nov 2022 21:03:04 GMT
 - request:
     method: get
     uri: https://api.weather.gov/gridpoints/BOU/57,62/forecast
@@ -250,26 +250,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - 51937ec5-6360-4ea8-b909-99289223a66f
+      - 891a3b92-0b61-4a77-b4ad-7825b6afb998
       X-Correlation-Id:
-      - d247be8
+      - a99b19a
       X-Server-Id:
       - vm-lnx-nids-apiapp8.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=3546, s-maxage=3600
+      - public, max-age=3525, s-maxage=3600
       Expires:
-      - Tue, 08 Nov 2022 02:58:07 GMT
+      - Tue, 08 Nov 2022 22:01:49 GMT
       Date:
-      - Tue, 08 Nov 2022 01:59:01 GMT
+      - Tue, 08 Nov 2022 21:03:04 GMT
       Content-Length:
-      - '11241'
+      - '11431'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - 26fc2a23
+      - 22d33108
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -315,12 +315,12 @@ http_interactions:
                 ]
             },
             "properties": {
-                "updated": "2022-11-07T22:23:48+00:00",
+                "updated": "2022-11-08T18:01:09+00:00",
                 "units": "us",
                 "forecastGenerator": "BaselineForecastGenerator",
-                "generatedAt": "2022-11-08T01:59:01+00:00",
-                "updateTime": "2022-11-07T22:23:48+00:00",
-                "validTimes": "2022-11-07T16:00:00+00:00/P7DT15H",
+                "generatedAt": "2022-11-08T21:03:04+00:00",
+                "updateTime": "2022-11-08T18:01:09+00:00",
+                "validTimes": "2022-11-08T11:00:00+00:00/P7DT14H",
                 "elevation": {
                     "unitCode": "wmoUnit:m",
                     "value": 1676.0952
@@ -328,66 +328,51 @@ http_interactions:
                 "periods": [
                     {
                         "number": 1,
-                        "name": "Tonight",
-                        "startTime": "2022-11-07T18:00:00-07:00",
-                        "endTime": "2022-11-08T06:00:00-07:00",
-                        "isDaytime": false,
-                        "temperature": 37,
+                        "name": "This Afternoon",
+                        "startTime": "2022-11-08T14:00:00-07:00",
+                        "endTime": "2022-11-08T18:00:00-07:00",
+                        "isDaytime": true,
+                        "temperature": 69,
                         "temperatureUnit": "F",
-                        "temperatureTrend": "rising",
-                        "windSpeed": "3 to 7 mph",
-                        "windDirection": "W",
-                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
-                        "shortForecast": "Partly Cloudy",
-                        "detailedForecast": "Partly cloudy. Low around 37, with temperatures rising to around 39 overnight. West wind 3 to 7 mph."
+                        "temperatureTrend": "falling",
+                        "windSpeed": "6 to 12 mph",
+                        "windDirection": "S",
+                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
+                        "shortForecast": "Sunny",
+                        "detailedForecast": "Sunny. High near 69, with temperatures falling to around 58 in the afternoon. South wind 6 to 12 mph."
                     },
                     {
                         "number": 2,
-                        "name": "Tuesday",
-                        "startTime": "2022-11-08T06:00:00-07:00",
-                        "endTime": "2022-11-08T18:00:00-07:00",
-                        "isDaytime": true,
-                        "temperature": 66,
-                        "temperatureUnit": "F",
-                        "temperatureTrend": "falling",
-                        "windSpeed": "6 to 9 mph",
-                        "windDirection": "SSW",
-                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
-                        "shortForecast": "Sunny",
-                        "detailedForecast": "Sunny. High near 66, with temperatures falling to around 59 in the afternoon. South southwest wind 6 to 9 mph."
-                    },
-                    {
-                        "number": 3,
-                        "name": "Tuesday Night",
+                        "name": "Tonight",
                         "startTime": "2022-11-08T18:00:00-07:00",
                         "endTime": "2022-11-09T06:00:00-07:00",
                         "isDaytime": false,
-                        "temperature": 39,
+                        "temperature": 40,
                         "temperatureUnit": "F",
-                        "temperatureTrend": null,
-                        "windSpeed": "9 mph",
-                        "windDirection": "SW",
+                        "temperatureTrend": "rising",
+                        "windSpeed": "5 to 9 mph",
+                        "windDirection": "SSW",
                         "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
                         "shortForecast": "Mostly Clear",
-                        "detailedForecast": "Mostly clear, with a low around 39. Southwest wind around 9 mph."
+                        "detailedForecast": "Mostly clear. Low around 40, with temperatures rising to around 42 overnight. South southwest wind 5 to 9 mph."
                     },
                     {
-                        "number": 4,
+                        "number": 3,
                         "name": "Wednesday",
                         "startTime": "2022-11-09T06:00:00-07:00",
                         "endTime": "2022-11-09T18:00:00-07:00",
                         "isDaytime": true,
                         "temperature": 68,
                         "temperatureUnit": "F",
-                        "temperatureTrend": null,
-                        "windSpeed": "7 to 16 mph",
-                        "windDirection": "SSW",
-                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
-                        "shortForecast": "Sunny",
-                        "detailedForecast": "Sunny, with a high near 68. South southwest wind 7 to 16 mph, with gusts as high as 25 mph."
+                        "temperatureTrend": "falling",
+                        "windSpeed": "7 to 17 mph",
+                        "windDirection": "S",
+                        "icon": "https://api.weather.gov/icons/land/day/few/rain_showers,30?size=medium",
+                        "shortForecast": "Sunny then Chance Rain Showers",
+                        "detailedForecast": "A chance of rain showers after 5pm. Sunny. High near 68, with temperatures falling to around 61 in the afternoon. South wind 7 to 17 mph, with gusts as high as 28 mph. Chance of precipitation is 30%."
                     },
                     {
-                        "number": 5,
+                        "number": 4,
                         "name": "Wednesday Night",
                         "startTime": "2022-11-09T18:00:00-07:00",
                         "endTime": "2022-11-10T06:00:00-07:00",
@@ -395,119 +380,119 @@ http_interactions:
                         "temperature": 30,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
-                        "windSpeed": "13 mph",
+                        "windSpeed": "14 mph",
                         "windDirection": "WSW",
-                        "icon": "https://api.weather.gov/icons/land/night/rain,30/snow,50?size=medium",
-                        "shortForecast": "Chance Light Rain then Chance Rain And Snow",
-                        "detailedForecast": "A chance of rain between 11pm and 2am, then a chance of rain and snow. Partly cloudy, with a low around 30. West southwest wind around 13 mph, with gusts as high as 26 mph. Chance of precipitation is 50%. Little or no snow accumulation expected."
+                        "icon": "https://api.weather.gov/icons/land/night/snow,50?size=medium",
+                        "shortForecast": "Chance Rain And Snow Showers",
+                        "detailedForecast": "A chance of rain showers before 10pm, then a chance of rain and snow showers. Mostly cloudy, with a low around 30. West southwest wind around 14 mph, with gusts as high as 22 mph. Chance of precipitation is 50%. Little or no snow accumulation expected."
                     },
                     {
-                        "number": 6,
+                        "number": 5,
                         "name": "Thursday",
                         "startTime": "2022-11-10T06:00:00-07:00",
                         "endTime": "2022-11-10T18:00:00-07:00",
                         "isDaytime": true,
-                        "temperature": 41,
+                        "temperature": 43,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
-                        "windSpeed": "12 to 15 mph",
+                        "windSpeed": "12 to 16 mph",
                         "windDirection": "NW",
-                        "icon": "https://api.weather.gov/icons/land/day/snow,50/snow,30?size=medium",
-                        "shortForecast": "Chance Light Snow",
-                        "detailedForecast": "A chance of snow before 5pm. Partly sunny, with a high near 41. Chance of precipitation is 50%. Little or no snow accumulation expected."
+                        "icon": "https://api.weather.gov/icons/land/day/snow,20/sct?size=medium",
+                        "shortForecast": "Slight Chance Snow Showers then Mostly Sunny",
+                        "detailedForecast": "A slight chance of snow showers before 11am. Mostly sunny, with a high near 43. Northwest wind 12 to 16 mph, with gusts as high as 29 mph. Chance of precipitation is 20%."
                     },
                     {
-                        "number": 7,
+                        "number": 6,
                         "name": "Thursday Night",
                         "startTime": "2022-11-10T18:00:00-07:00",
                         "endTime": "2022-11-11T06:00:00-07:00",
                         "isDaytime": false,
-                        "temperature": 20,
+                        "temperature": 22,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "6 to 12 mph",
-                        "windDirection": "W",
-                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
-                        "shortForecast": "Partly Cloudy",
-                        "detailedForecast": "Partly cloudy, with a low around 20."
+                        "windDirection": "WNW",
+                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
+                        "shortForecast": "Mostly Clear",
+                        "detailedForecast": "Mostly clear, with a low around 22."
                     },
                     {
-                        "number": 8,
+                        "number": 7,
                         "name": "Veterans Day",
                         "startTime": "2022-11-11T06:00:00-07:00",
                         "endTime": "2022-11-11T18:00:00-07:00",
                         "isDaytime": true,
-                        "temperature": 40,
+                        "temperature": 42,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
-                        "windSpeed": "6 to 10 mph",
-                        "windDirection": "SE",
+                        "windSpeed": "6 to 9 mph",
+                        "windDirection": "ESE",
                         "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
                         "shortForecast": "Sunny",
-                        "detailedForecast": "Sunny, with a high near 40."
+                        "detailedForecast": "Sunny, with a high near 42."
                     },
                     {
-                        "number": 9,
+                        "number": 8,
                         "name": "Friday Night",
                         "startTime": "2022-11-11T18:00:00-07:00",
                         "endTime": "2022-11-12T06:00:00-07:00",
                         "isDaytime": false,
-                        "temperature": 20,
+                        "temperature": 22,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "6 mph",
-                        "windDirection": "S",
+                        "windDirection": "WSW",
                         "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
                         "shortForecast": "Mostly Clear",
-                        "detailedForecast": "Mostly clear, with a low around 20."
+                        "detailedForecast": "Mostly clear, with a low around 22."
                     },
                     {
-                        "number": 10,
+                        "number": 9,
                         "name": "Saturday",
                         "startTime": "2022-11-12T06:00:00-07:00",
                         "endTime": "2022-11-12T18:00:00-07:00",
                         "isDaytime": true,
-                        "temperature": 46,
+                        "temperature": 51,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
-                        "windSpeed": "7 mph",
-                        "windDirection": "W",
-                        "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
-                        "shortForecast": "Sunny",
-                        "detailedForecast": "Sunny, with a high near 46."
+                        "windSpeed": "8 mph",
+                        "windDirection": "WNW",
+                        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+                        "shortForecast": "Mostly Sunny",
+                        "detailedForecast": "Mostly sunny, with a high near 51."
                     },
                     {
-                        "number": 11,
+                        "number": 10,
                         "name": "Saturday Night",
                         "startTime": "2022-11-12T18:00:00-07:00",
                         "endTime": "2022-11-13T06:00:00-07:00",
                         "isDaytime": false,
-                        "temperature": 23,
+                        "temperature": 25,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "6 mph",
-                        "windDirection": "W",
+                        "windDirection": "WNW",
                         "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
                         "shortForecast": "Partly Cloudy",
-                        "detailedForecast": "Partly cloudy, with a low around 23."
+                        "detailedForecast": "Partly cloudy, with a low around 25."
                     },
                     {
-                        "number": 12,
+                        "number": 11,
                         "name": "Sunday",
                         "startTime": "2022-11-13T06:00:00-07:00",
                         "endTime": "2022-11-13T18:00:00-07:00",
                         "isDaytime": true,
-                        "temperature": 45,
+                        "temperature": 44,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
-                        "windSpeed": "6 to 9 mph",
-                        "windDirection": "NNW",
+                        "windSpeed": "8 mph",
+                        "windDirection": "N",
                         "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
                         "shortForecast": "Mostly Sunny",
-                        "detailedForecast": "Mostly sunny, with a high near 45."
+                        "detailedForecast": "Mostly sunny, with a high near 44."
                     },
                     {
-                        "number": 13,
+                        "number": 12,
                         "name": "Sunday Night",
                         "startTime": "2022-11-13T18:00:00-07:00",
                         "endTime": "2022-11-14T06:00:00-07:00",
@@ -516,28 +501,43 @@ http_interactions:
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "6 mph",
-                        "windDirection": "WNW",
+                        "windDirection": "W",
                         "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
                         "shortForecast": "Partly Cloudy",
                         "detailedForecast": "Partly cloudy, with a low around 23."
                     },
                     {
-                        "number": 14,
+                        "number": 13,
                         "name": "Monday",
                         "startTime": "2022-11-14T06:00:00-07:00",
                         "endTime": "2022-11-14T18:00:00-07:00",
                         "isDaytime": true,
-                        "temperature": 43,
+                        "temperature": 46,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
-                        "windSpeed": "3 to 7 mph",
+                        "windSpeed": "8 mph",
                         "windDirection": "NNW",
-                        "icon": "https://api.weather.gov/icons/land/day/sct/snow?size=medium",
-                        "shortForecast": "Mostly Sunny then Slight Chance Light Snow",
-                        "detailedForecast": "A slight chance of snow after 5pm. Mostly sunny, with a high near 43."
+                        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+                        "shortForecast": "Mostly Sunny",
+                        "detailedForecast": "Mostly sunny, with a high near 46."
+                    },
+                    {
+                        "number": 14,
+                        "name": "Monday Night",
+                        "startTime": "2022-11-14T18:00:00-07:00",
+                        "endTime": "2022-11-15T06:00:00-07:00",
+                        "isDaytime": false,
+                        "temperature": 25,
+                        "temperatureUnit": "F",
+                        "temperatureTrend": null,
+                        "windSpeed": "7 mph",
+                        "windDirection": "WNW",
+                        "icon": "https://api.weather.gov/icons/land/night/sct/snow?size=medium",
+                        "shortForecast": "Partly Cloudy then Slight Chance Snow Showers",
+                        "detailedForecast": "A slight chance of snow showers after 5am. Partly cloudy, with a low around 25."
                     }
                 ]
             }
         }
-  recorded_at: Tue, 08 Nov 2022 01:59:01 GMT
+  recorded_at: Tue, 08 Nov 2022 21:03:04 GMT
 recorded_with: VCR 6.1.0
