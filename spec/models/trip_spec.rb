@@ -26,4 +26,21 @@ RSpec.describe Trip, type: :model do
       end
     end
   end
+
+   describe '#arrival_date_calulation', :vcr do
+    it 'takes start date, start_address, end_address and returns estimated arrival date' do
+      
+      stubbed_return_value = {:realTime=>65929, :hasTollRoad=>true, :distance=>1279.8648}
+      allow(NavFacade).to receive(:trip_details).and_return(stubbed_return_value)
+      
+      @trip1 = Trip.create!(uid: '106758666395730546327', name: 'Test_Trip_2', departure_date: "Tues, 08 Nov 2022 20:38:55 UTC +00:00".to_datetime + 30.seconds,
+      arrival_date: "Fri, 14 Nov 2022 20:38:55 UTC +00:00".to_datetime)
+      start_address = Address.create!(location: '2303 Braun Ct, Golden CO, 80401')
+      end_address = Address.create!(location: '1823 Cedar Hill, Royal Oak, MI 48067')
+
+
+      return_value = @trip1.arrival_date_calculation(@trip1.departure_date, start_address.location, end_address.location)
+      expect(return_value).to eq("Wed, 09 Nov 2022 14:58:14 +0000")
+    end
+  end
 end
