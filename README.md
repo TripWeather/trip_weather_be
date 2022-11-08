@@ -749,7 +749,7 @@ or
 <b>Example Output:</b>
 
 ```json
-204 No Content
+Status 204 No Content
 ```
 
 ### Trip Stops Addresses 
