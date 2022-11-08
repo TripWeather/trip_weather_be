@@ -19,6 +19,7 @@ class NavFacade < NavService
   end
 
   def self.nav_object(start_address, end_address)
+
     return_hash = {}
     return_hash[:directions] = get_directions(start_address, end_address)
     return_hash[:details] = trip_details(start_address, end_address)
