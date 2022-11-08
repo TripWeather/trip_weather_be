@@ -2,6 +2,8 @@
 
 [Deployed BE Heroku Site](https://trip-weather-2022.herokuapp.com/api/v1/)
 
+[Return to Main Page](https://github.com/TripWeather)
+
 ## Table of Contents
 
 1. [Architecture and Design](#architecture-and-design)
