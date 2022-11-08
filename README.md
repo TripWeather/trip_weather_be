@@ -9,7 +9,13 @@
 - [Weather End Point](#weather-end-point)
 - [Navigation End Point](#navigation-end-point)
 - [Trips End Points](#trips-end-points)
-    - Index
+    - [Index](#trips-index)
+    - [Show](#trips-show)
+        - [Trips Stops Index](#trips-stops-index) -- ??should i just name it Stops?
+        - [Trips Stops Show](#trips-stops-show)
+        - [Trips Stops Addresses](#trips-stops-addresses)
+
+3. [Contributors](#contributors)
 
 
 ## Architecture and Design
@@ -45,11 +51,12 @@ example:
     }
 }
 ```
+
 ### Navigation End Point
 
 `GET  /api/v1/nav`
 or
-`https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address={address}&end_address={address}%id={id}`
+`https://trip-weather-2022.herokuapp.com/api/v1/nav?start_address={address}&end_address={address}%id=1`
 
 
 example:
@@ -354,6 +361,153 @@ example:
     ]
 }
 ```
+
+#### Trips Show
+Returns individual trip details and the number of stops, along with the related links to stops
+
+`GET  /api/v1/:uid/trips/:trip_id` 
+or
+`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}` 
+
+example:
+
+`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/`
+
+```json
+{
+    "data": {
+        "id": "1",
+        "type": "trip",
+        "attributes": {
+            "uid": "1000",
+            "name": "Test_Trip",
+            "departure_date": "2022-11-07T16:06:47.622Z",
+            "arrival_date": "2022-11-09T16:06:17.623Z"
+        },
+        "relationships": {
+            "stops": {
+                "data": [
+                    {
+                        "id": "1",
+                        "type": "stop"
+                    },
+                    {
+                        "id": "2",
+                        "type": "stop"
+                    }
+                ],
+                "links": {
+                    "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/"
+                }
+            }
+        },
+        "links": {
+            "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1"
+        }
+    }
+}
+```
+
+#### Trips Stops Index
+Returns all the stops of a given trip
+
+`GET  /api/v1/{:uid}/trips/{:trip_id}/stops` 
+or
+`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops`
+
+example:
+
+`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops`
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "stop",
+            "attributes": {
+                "type_of_stop": "start"
+            },
+            "relationships": {
+                "address": {
+                    "data": {
+                        "id": "1",
+                        "type": "address"
+                    },
+                    "links": {
+                        "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1"
+            }
+        },
+        {
+            "id": "2",
+            "type": "stop",
+            "attributes": {
+                "type_of_stop": "end"
+            },
+            "relationships": {
+                "address": {
+                    "data": {
+                        "id": "2",
+                        "type": "address"
+                    },
+                    "links": {
+                        "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/2/addresses/2"
+                    }
+                }
+            },
+            "links": {
+                "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/2"
+            }
+        }
+    ]
+}
+```
+
+#### Trips Stops Show
+Returns Details on a specific stop
+
+`GET  /api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}` 
+or
+`https://trip-weather-2022.herokuapp.com/api/v1/{:uid}/trips/{:trip_id}/stops/{:stop_id}`
+
+example:
+
+`https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1`
+
+```json
+{
+    "data": {
+        "id": "1",
+        "type": "stop",
+        "attributes": {
+            "type_of_stop": "start"
+        },
+        "relationships": {
+            "address": {
+                "data": {
+                    "id": "1",
+                    "type": "address"
+                },
+                "links": {
+                    "related": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1/addresses/1"
+                }
+            }
+        },
+        "links": {
+            "self": "https://trip-weather-2022.herokuapp.com/api/v1/1000/trips/1/stops/1"
+        }
+    }
+}
+```
+
+#### Trips Stops Addresses
+
+
 ## Local Setup
 
 * Fork this repository
@@ -397,3 +551,7 @@ Stephen Fabian | [Github](https://github.com/stephenfabian) | [LinkedIn](https:/
 <img src="https://avatars.githubusercontent.com/u/59062958?s=120&v=4" />
 
 Sandy M Griffin | [Github](https://github.com/SandyyMarie) | [LinkedIn](https://www.linkedin.com/in/sandy-marie/) |
+
+##
+
+[Back To Top](#back-end-repository-for-trip-weather) 
