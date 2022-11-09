@@ -4,6 +4,8 @@ module Api
   module V1
     class TripsController < ApplicationController
       before_action :format_date, only: %i[create update]
+      before_action :update_arrival, only: %i[show]
+
       def index
         render json: TripSerializer.new(Trip.where(uid: params[:user_id]))
       end
@@ -18,6 +20,8 @@ module Api
 
       def create
         render json: TripSerializer.new(Trip.create!(trip_params)), status: 201
+        #
+        # Trip.last.update(arrival_date: )
       end
 
       def update
@@ -28,6 +32,14 @@ module Api
       end
 
       private
+
+      def update_arrival
+        trip = Trip.find(params[:id])
+        start_date = trip.departure_date
+        start_address = trip.stops.first.address.location
+        end_address = trip.stops.last.address.location
+        Trip.update(params[:id], arrival_date: trip.arrival_date_calculation(start_date, start_address, end_address))
+      end
 
       def trip_params
         params.require(:trip).permit(:uid, :name, :departure_date, :arrival_date)
