@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=b71nqgsCMDTnICrLzk3t5nUqbAStRz9q&location=2303%20Braun%20Ct%20Golden%20CO%2080401
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 09 Nov 2022 19:02:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '845'
+      X-Powered-By:
+      - Express
+      X-Request-Id:
+      - 0df3d050-6061-11ed-8d72-0de4e6fa78f0
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"34d-Ge2Y3ALhTeg1uIWHvl3OJ6Gnpgs"
+      X-Vz-Migration-Api:
+      - 'true'
+      Status:
+      - success
+      - success
+      Transactionweight:
+      - NaN
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiIyMzAzIEJyYXVuIEN0IEdvbGRlbiBDTyA4MDQwMSJ9LCJsb2NhdGlvbnMiOlt7InN0cmVldCI6IjIzMDMgQnJhdW4gQ3QiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiR29sZGVuIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IkplZmZlcnNvbiIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IkNPIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiI4MDQwMS02ODExIiwiZ2VvY29kZVF1YWxpdHlDb2RlIjoiUDFBQUEiLCJnZW9jb2RlUXVhbGl0eSI6IkFERFJFU1MiLCJkcmFnUG9pbnQiOmZhbHNlLCJzaWRlT2ZTdHJlZXQiOiJMIiwibGlua0lkIjoiMCIsInVua25vd25JbnB1dCI6IiIsInR5cGUiOiJzIiwibGF0TG5nIjp7ImxhdCI6MzkuNzUyMzEsImxuZyI6LTEwNS4xNTAwMX0sImRpc3BsYXlMYXRMbmciOnsibGF0IjozOS43NTIzMSwibG5nIjotMTA1LjE1MDN9LCJtYXBVcmwiOiIifV19XX0=
+  recorded_at: Wed, 09 Nov 2022 19:02:27 GMT
+recorded_with: VCR 6.1.0
