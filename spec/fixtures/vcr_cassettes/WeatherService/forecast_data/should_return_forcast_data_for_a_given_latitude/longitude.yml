@@ -27,26 +27,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - a90884c3-6790-4812-9a0e-ac4d3674951c
+      - 0af146ce-b85d-4dfc-8373-7c12141f8d00
       X-Correlation-Id:
-      - 1651bec3
+      - 5a5af448
       X-Server-Id:
-      - vm-lnx-nids-apiapp5.ncep.noaa.gov
+      - vm-lnx-nids-apiapp6.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=85568, s-maxage=120
+      - public, max-age=61608, s-maxage=120
       Expires:
-      - Thu, 10 Nov 2022 18:48:36 GMT
+      - Thu, 10 Nov 2022 13:54:01 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:28 GMT
+      - Wed, 09 Nov 2022 20:47:13 GMT
       Content-Length:
       - '3096'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a375f92c
+      - 2befe29
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -146,7 +146,7 @@ http_interactions:
                 "radarStation": "KTWX"
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:28 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:12 GMT
 - request:
     method: get
     uri: https://api.weather.gov/gridpoints/TOP/31,80/forecast
@@ -174,26 +174,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - 695ae422-ab1f-4968-9e0c-a99d21b0f3b5
+      - 559b70a2-b321-4b92-abaa-1688a869ba02
       X-Correlation-Id:
-      - 18fb50d9
+      - 168b7284
       X-Server-Id:
-      - vm-lnx-nids-apiapp2.ncep.noaa.gov
+      - vm-lnx-nids-apiapp5.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=2116, s-maxage=3600
+      - public, max-age=2662, s-maxage=3600
       Expires:
-      - Wed, 09 Nov 2022 19:37:44 GMT
+      - Wed, 09 Nov 2022 21:31:35 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:28 GMT
+      - Wed, 09 Nov 2022 20:47:13 GMT
       Content-Length:
       - '11345'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a375faaa
+      - 2befe36
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -242,7 +242,7 @@ http_interactions:
                 "updated": "2022-11-09T18:09:44+00:00",
                 "units": "us",
                 "forecastGenerator": "BaselineForecastGenerator",
-                "generatedAt": "2022-11-09T18:38:41+00:00",
+                "generatedAt": "2022-11-09T20:32:17+00:00",
                 "updateTime": "2022-11-09T18:09:44+00:00",
                 "validTimes": "2022-11-09T12:00:00+00:00/P7DT13H",
                 "elevation": {
@@ -253,7 +253,7 @@ http_interactions:
                     {
                         "number": 1,
                         "name": "This Afternoon",
-                        "startTime": "2022-11-09T12:00:00-06:00",
+                        "startTime": "2022-11-09T14:00:00-06:00",
                         "endTime": "2022-11-09T18:00:00-06:00",
                         "isDaytime": true,
                         "temperature": 73,
@@ -463,5 +463,5 @@ http_interactions:
                 ]
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:28 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:12 GMT
 recorded_with: VCR 6.1.0

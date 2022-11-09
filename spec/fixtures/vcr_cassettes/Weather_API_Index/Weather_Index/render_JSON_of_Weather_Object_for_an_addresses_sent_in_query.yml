@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 09 Nov 2022 19:02:27 GMT
+      - Wed, 09 Nov 2022 20:47:11 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,7 +27,7 @@ http_interactions:
       X-Powered-By:
       - Express
       X-Request-Id:
-      - 0d7c0840-6061-11ed-990e-8dda91268486
+      - af482290-606f-11ed-8c7a-117c5858785c
       Access-Control-Allow-Origin:
       - "*"
       Etag:
@@ -43,7 +43,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiIxMjIzMCBXYXNoaW5ndG9uIENlbnRlciBQa3d5IFRob3JudG9uIENPIDgwMjQxIn0sImxvY2F0aW9ucyI6W3sic3RyZWV0IjoiMTIyMzAgV2FzaGluZ3RvbiBDZW50ZXIgUGt3eSIsImFkbWluQXJlYTYiOiIiLCJhZG1pbkFyZWE2VHlwZSI6Ik5laWdoYm9yaG9vZCIsImFkbWluQXJlYTUiOiJUaG9ybnRvbiIsImFkbWluQXJlYTVUeXBlIjoiQ2l0eSIsImFkbWluQXJlYTQiOiJBZGFtcyIsImFkbWluQXJlYTRUeXBlIjoiQ291bnR5IiwiYWRtaW5BcmVhMyI6IkNPIiwiYWRtaW5BcmVhM1R5cGUiOiJTdGF0ZSIsImFkbWluQXJlYTEiOiJVUyIsImFkbWluQXJlYTFUeXBlIjoiQ291bnRyeSIsInBvc3RhbENvZGUiOiI4MDI0MS0yNjY3IiwiZ2VvY29kZVF1YWxpdHlDb2RlIjoiUDFBQUEiLCJnZW9jb2RlUXVhbGl0eSI6IkFERFJFU1MiLCJkcmFnUG9pbnQiOmZhbHNlLCJzaWRlT2ZTdHJlZXQiOiJSIiwibGlua0lkIjoiMCIsInVua25vd25JbnB1dCI6IiIsInR5cGUiOiJzIiwibGF0TG5nIjp7ImxhdCI6MzkuOTE5MzYsImxuZyI6LTEwNC45NzUwN30sImRpc3BsYXlMYXRMbmciOnsibGF0IjozOS45MTk1MSwibG5nIjotMTA0Ljk3NTA3fSwibWFwVXJsIjoiIn1dfV19
-  recorded_at: Wed, 09 Nov 2022 19:02:27 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:11 GMT
 - request:
     method: get
     uri: https://api.weather.gov/points/39.9194,-104.9751
@@ -80,17 +80,17 @@ http_interactions:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=86338, s-maxage=120
+      - public, max-age=80063, s-maxage=120
       Expires:
-      - Thu, 10 Nov 2022 19:01:25 GMT
+      - Thu, 10 Nov 2022 19:01:34 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:27 GMT
+      - Wed, 09 Nov 2022 20:47:11 GMT
       Content-Length:
       - '3092'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a375dd2f
+      - 2befd80
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -190,7 +190,7 @@ http_interactions:
                 "radarStation": "KFTG"
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:27 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:11 GMT
 - request:
     method: get
     uri: https://api.weather.gov/gridpoints/BOU/63,69/forecast
@@ -218,26 +218,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - 520b94df-199c-4167-a739-403cea2d1667
+      - 806b34fa-c323-4b0e-9303-384fa85c387c
       X-Correlation-Id:
-      - 55bfa82
+      - eae24b7
       X-Server-Id:
-      - vm-lnx-nids-apiapp12.ncep.noaa.gov
+      - vm-lnx-nids-apiapp8.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=3435, s-maxage=3600
+      - public, max-age=1220, s-maxage=3600
       Expires:
-      - Wed, 09 Nov 2022 19:59:42 GMT
+      - Wed, 09 Nov 2022 21:07:31 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:27 GMT
+      - Wed, 09 Nov 2022 20:47:11 GMT
       Content-Length:
-      - '11269'
+      - '11266'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a375de84
+      - 2befd92
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -286,7 +286,7 @@ http_interactions:
                 "updated": "2022-11-09T17:22:44+00:00",
                 "units": "us",
                 "forecastGenerator": "BaselineForecastGenerator",
-                "generatedAt": "2022-11-09T19:01:25+00:00",
+                "generatedAt": "2022-11-09T20:06:45+00:00",
                 "updateTime": "2022-11-09T17:22:44+00:00",
                 "validTimes": "2022-11-09T11:00:00+00:00/P7DT17H",
                 "elevation": {
@@ -297,17 +297,17 @@ http_interactions:
                     {
                         "number": 1,
                         "name": "This Afternoon",
-                        "startTime": "2022-11-09T12:00:00-07:00",
+                        "startTime": "2022-11-09T13:00:00-07:00",
                         "endTime": "2022-11-09T18:00:00-07:00",
                         "isDaytime": true,
                         "temperature": 56,
                         "temperatureUnit": "F",
                         "temperatureTrend": "falling",
-                        "windSpeed": "9 to 14 mph",
+                        "windSpeed": "14 mph",
                         "windDirection": "W",
                         "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
                         "shortForecast": "Sunny",
-                        "detailedForecast": "Sunny. High near 56, with temperatures falling to around 49 in the afternoon. West wind 9 to 14 mph, with gusts as high as 22 mph."
+                        "detailedForecast": "Sunny. High near 56, with temperatures falling to around 49 in the afternoon. West wind around 14 mph, with gusts as high as 22 mph."
                     },
                     {
                         "number": 2,
@@ -507,5 +507,5 @@ http_interactions:
                 ]
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:27 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:11 GMT
 recorded_with: VCR 6.1.0

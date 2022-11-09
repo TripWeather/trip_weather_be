@@ -35,15 +35,15 @@ http_interactions:
       Content-Length:
       - '3083'
       Cache-Control:
-      - max-age=60069
+      - max-age=53737
       Expires:
-      - Thu, 10 Nov 2022 11:43:33 GMT
+      - Thu, 10 Nov 2022 11:42:42 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:24 GMT
+      - Wed, 09 Nov 2022 20:47:05 GMT
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a3759dba
+      - 2bef9a7
       Vary:
       - Accept,Feature-Flags,Accept-Language
       Strict-Transport-Security:
@@ -145,7 +145,7 @@ http_interactions:
                 "radarStation": "KLWX"
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:24 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:05 GMT
 - request:
     method: get
     uri: https://api.weather.gov/gridpoints/LWX/97,71/forecast
@@ -173,26 +173,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - d8dbb9fa-6959-4547-aea6-09e9bbe4ddd2
+      - 88bc4f6b-d76e-4313-9961-2df37071be32
       X-Correlation-Id:
-      - 827b847
+      - 177d0cde
       X-Server-Id:
-      - vm-lnx-nids-apiapp3.ncep.noaa.gov
+      - vm-lnx-nids-apiapp4.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=2768, s-maxage=3600
+      - public, max-age=1251, s-maxage=3600
       Expires:
-      - Wed, 09 Nov 2022 19:48:32 GMT
+      - Wed, 09 Nov 2022 21:07:56 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:24 GMT
+      - Wed, 09 Nov 2022 20:47:05 GMT
       Content-Length:
-      - '11220'
+      - '11430'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a3759f9c
+      - 2bef9bf
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -238,12 +238,12 @@ http_interactions:
                 ]
             },
             "properties": {
-                "updated": "2022-11-09T17:29:41+00:00",
+                "updated": "2022-11-09T19:55:54+00:00",
                 "units": "us",
                 "forecastGenerator": "BaselineForecastGenerator",
-                "generatedAt": "2022-11-09T18:48:51+00:00",
-                "updateTime": "2022-11-09T17:29:41+00:00",
-                "validTimes": "2022-11-09T11:00:00+00:00/P7DT14H",
+                "generatedAt": "2022-11-09T20:08:24+00:00",
+                "updateTime": "2022-11-09T19:55:54+00:00",
+                "validTimes": "2022-11-09T13:00:00+00:00/P8DT6H",
                 "elevation": {
                     "unitCode": "wmoUnit:m",
                     "value": 17.9832
@@ -252,17 +252,17 @@ http_interactions:
                     {
                         "number": 1,
                         "name": "This Afternoon",
-                        "startTime": "2022-11-09T13:00:00-05:00",
+                        "startTime": "2022-11-09T15:00:00-05:00",
                         "endTime": "2022-11-09T18:00:00-05:00",
                         "isDaytime": true,
-                        "temperature": 58,
+                        "temperature": 62,
                         "temperatureUnit": "F",
-                        "temperatureTrend": null,
+                        "temperatureTrend": "falling",
                         "windSpeed": "7 mph",
                         "windDirection": "E",
                         "icon": "https://api.weather.gov/icons/land/day/few?size=medium",
                         "shortForecast": "Sunny",
-                        "detailedForecast": "Sunny, with a high near 58. East wind around 7 mph."
+                        "detailedForecast": "Sunny. High near 62, with temperatures falling to around 55 in the afternoon. East wind around 7 mph."
                     },
                     {
                         "number": 2,
@@ -285,14 +285,14 @@ http_interactions:
                         "startTime": "2022-11-10T06:00:00-05:00",
                         "endTime": "2022-11-10T18:00:00-05:00",
                         "isDaytime": true,
-                        "temperature": 68,
+                        "temperature": 67,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "3 to 8 mph",
                         "windDirection": "E",
                         "icon": "https://api.weather.gov/icons/land/day/bkn?size=medium",
                         "shortForecast": "Partly Sunny",
-                        "detailedForecast": "Partly sunny, with a high near 68. East wind 3 to 8 mph."
+                        "detailedForecast": "Partly sunny, with a high near 67. East wind 3 to 8 mph."
                     },
                     {
                         "number": 4,
@@ -300,14 +300,14 @@ http_interactions:
                         "startTime": "2022-11-10T18:00:00-05:00",
                         "endTime": "2022-11-11T06:00:00-05:00",
                         "isDaytime": false,
-                        "temperature": 58,
+                        "temperature": 56,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "5 mph",
                         "windDirection": "SE",
-                        "icon": "https://api.weather.gov/icons/land/night/bkn/rain_showers,40?size=medium",
+                        "icon": "https://api.weather.gov/icons/land/night/bkn/rain_showers,50?size=medium",
                         "shortForecast": "Mostly Cloudy then Scattered Rain Showers",
-                        "detailedForecast": "Scattered rain showers after 1am. Mostly cloudy, with a low around 58. Southeast wind around 5 mph. Chance of precipitation is 40%. New rainfall amounts between a tenth and quarter of an inch possible."
+                        "detailedForecast": "Scattered rain showers after 1am. Mostly cloudy, with a low around 56. Southeast wind around 5 mph. Chance of precipitation is 50%. New rainfall amounts less than a tenth of an inch possible."
                     },
                     {
                         "number": 5,
@@ -315,14 +315,14 @@ http_interactions:
                         "startTime": "2022-11-11T06:00:00-05:00",
                         "endTime": "2022-11-11T18:00:00-05:00",
                         "isDaytime": true,
-                        "temperature": 71,
+                        "temperature": 70,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "6 to 14 mph",
                         "windDirection": "SE",
                         "icon": "https://api.weather.gov/icons/land/day/tsra,90?size=medium",
                         "shortForecast": "Showers And Thunderstorms",
-                        "detailedForecast": "Rain showers before 10am, then showers and thunderstorms. Cloudy, with a high near 71. Southeast wind 6 to 14 mph, with gusts as high as 24 mph. Chance of precipitation is 90%."
+                        "detailedForecast": "Rain showers before 10am, then showers and thunderstorms. Cloudy, with a high near 70. Southeast wind 6 to 14 mph, with gusts as high as 24 mph. Chance of precipitation is 90%."
                     },
                     {
                         "number": 6,
@@ -330,14 +330,14 @@ http_interactions:
                         "startTime": "2022-11-11T18:00:00-05:00",
                         "endTime": "2022-11-12T06:00:00-05:00",
                         "isDaytime": false,
-                        "temperature": 59,
+                        "temperature": 58,
                         "temperatureUnit": "F",
                         "temperatureTrend": null,
                         "windSpeed": "15 mph",
                         "windDirection": "S",
                         "icon": "https://api.weather.gov/icons/land/night/tsra,90?size=medium",
                         "shortForecast": "Showers And Thunderstorms",
-                        "detailedForecast": "Showers and thunderstorms. Mostly cloudy, with a low around 59. Chance of precipitation is 90%."
+                        "detailedForecast": "Showers and thunderstorms. Mostly cloudy, with a low around 58. Chance of precipitation is 90%."
                     },
                     {
                         "number": 7,
@@ -425,9 +425,9 @@ http_interactions:
                         "temperatureTrend": null,
                         "windSpeed": "6 mph",
                         "windDirection": "N",
-                        "icon": "https://api.weather.gov/icons/land/night/few?size=medium",
-                        "shortForecast": "Mostly Clear",
-                        "detailedForecast": "Mostly clear, with a low around 31."
+                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
+                        "shortForecast": "Partly Cloudy",
+                        "detailedForecast": "Partly cloudy, with a low around 31."
                     },
                     {
                         "number": 13,
@@ -440,9 +440,9 @@ http_interactions:
                         "temperatureTrend": null,
                         "windSpeed": "7 mph",
                         "windDirection": "N",
-                        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
-                        "shortForecast": "Mostly Sunny",
-                        "detailedForecast": "Mostly sunny, with a high near 48."
+                        "icon": "https://api.weather.gov/icons/land/day/rain_showers,30?size=medium",
+                        "shortForecast": "Chance Rain Showers",
+                        "detailedForecast": "A chance of rain showers after 7am. Mostly cloudy, with a high near 48. Chance of precipitation is 30%."
                     },
                     {
                         "number": 14,
@@ -455,12 +455,12 @@ http_interactions:
                         "temperatureTrend": null,
                         "windSpeed": "5 mph",
                         "windDirection": "N",
-                        "icon": "https://api.weather.gov/icons/land/night/sct?size=medium",
-                        "shortForecast": "Partly Cloudy",
-                        "detailedForecast": "Partly cloudy, with a low around 34."
+                        "icon": "https://api.weather.gov/icons/land/night/rain_showers,40?size=medium",
+                        "shortForecast": "Chance Rain Showers",
+                        "detailedForecast": "A chance of rain showers. Mostly cloudy, with a low around 34. Chance of precipitation is 40%."
                     }
                 ]
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:24 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:05 GMT
 recorded_with: VCR 6.1.0
