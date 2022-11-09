@@ -5,10 +5,25 @@ require 'rails_helper'
 RSpec.describe LatLongService, :vcr do
   it 'should convert address to latitude/longitude' do
     lat_long_service_call = LatLongService.address_to_coord('1600 Pennsylvania Ave NW, Washington DC')
-    expect(lat_long_service_call[:data][0][:latitude]).to eq(38.897675)
-    expect(lat_long_service_call[:data][0][:latitude]).to be_an(Float)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lat]).to eq(38.8974)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lat]).to be_a(Float)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lng]).to eq(-77.03659)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lng]).to be_a(Float)
+  end
 
-    expect(lat_long_service_call[:data][0][:longitude]).to eq(-77.036547)
-    expect(lat_long_service_call[:data][0][:longitude]).to be_an(Float)
+  it 'should convert address to latitude/longitude, second address' do
+    lat_long_service_call = LatLongService.address_to_coord('200 E Colfax Ave, Denver, CO 80203')
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lat]).to eq(39.74006)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lat]).to be_a(Float)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lng]).to eq(-104.98456)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lng]).to be_a(Float)
+  end
+
+  it 'should convert address to latitude/longitude, third address' do
+    lat_long_service_call = LatLongService.address_to_coord('2303 Braun Ct, Golden CO 80401')
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lat]).to eq(39.75231)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lat]).to be_a(Float)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lng]).to eq(-105.15001)
+    expect(lat_long_service_call[:results].first[:locations].first[:latLng][:lng]).to be_a(Float)
   end
 end

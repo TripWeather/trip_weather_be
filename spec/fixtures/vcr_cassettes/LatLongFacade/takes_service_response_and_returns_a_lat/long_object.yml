@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.positionstack.com/v1/forward?access_key=506920f7b6a5e821f70babfd18080a31&query=1600%20Pennsylvania%20Ave%20NW,%20Washington%20DC
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=b71nqgsCMDTnICrLzk3t5nUqbAStRz9q&location=1600%20Pennsylvania%20Ave%20NW%20Washington%20DC%2020500
     body:
       encoding: US-ASCII
       string: ''
@@ -19,61 +19,29 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 08 Nov 2022 21:03:01 GMT
+      - Wed, 09 Nov 2022 19:02:22 GMT
       Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Faraday v2.6.0
-      Accept-Encoding:
-      - gzip
-      Cache-Control:
-      - no-cache, private
-      X-Apilayer-Transaction-Id:
-      - e42bb526-3a94-4a47-9e31-fa46ff74086f
+      - application/json; charset=utf-8
+      Content-Length:
+      - '899'
+      X-Powered-By:
+      - Express
+      X-Request-Id:
+      - 0ac17c20-6061-11ed-8c7a-117c5858785c
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Allow-Methods:
-      - GET, POST, HEAD, OPTIONS
-      Access-Control-Allow-Headers:
-      - "*"
-      X-Quota-Limit:
-      - '25000'
-      X-Quota-Remaining:
-      - '24894'
-      X-Increment-Usage:
-      - '1'
-      X-Request-Time:
-      - '0.083'
-      Cf-Cache-Status:
-      - DYNAMIC
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=%2B6icTtx4iHFWTQPsQwCRUZeOTqFqo9bOvIfjjHtFfarcLmyFV3f%2BWuCFnhwpNR8lw3X%2B3hnlbl4tz8s2gwZq36h954aFChrALvQ3ssfoM75kmXpjEL2FvdXtcKV8%2FapTGoO0Nor5Dyc%3D"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 767140bdfa1927de-SEA
-      Alt-Svc:
-      - h3=":443"; ma=86400, h3-29=":443"; ma=86400
+      Etag:
+      - W/"383-Kum8QDC1MhVXzt72hr4VZMlqoE4"
+      X-Vz-Migration-Api:
+      - 'true'
+      Status:
+      - success
+      - success
+      Transactionweight:
+      - NaN
     body:
       encoding: ASCII-8BIT
-      string: '{"data":[{"latitude":38.897675,"longitude":-77.036547,"type":"address","name":"1600
-        Pennsylvania Avenue NW","number":"1600","postal_code":"20500","street":"Pennsylvania
-        Avenue NW","confidence":1,"region":"District of Columbia","region_code":"DC","county":"District
-        of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
-        House Grounds","country":"United States","country_code":"USA","continent":"North
-        America","label":"1600 Pennsylvania Avenue NW, Washington, DC, USA"},{"latitude":38.897473,"longitude":-77.036548,"type":"address","name":"1600
-        Pennsylvania Avenue Northwest","number":"1600","postal_code":"20500","street":"Pennsylvania
-        Avenue Northwest","confidence":1,"region":"District of Columbia","region_code":"DC","county":"District
-        of Columbia","locality":"Washington","administrative_area":null,"neighbourhood":"White
-        House Grounds","country":"United States","country_code":"USA","continent":"North
-        America","label":"1600 Pennsylvania Avenue Northwest, Washington, DC, USA"}]}'
-  recorded_at: Tue, 08 Nov 2022 21:03:00 GMT
+      string: !binary |-
+        eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiIxNjAwIFBlbm5zeWx2YW5pYSBBdmUgTlcgV2FzaGluZ3RvbiBEQyAyMDUwMCJ9LCJsb2NhdGlvbnMiOlt7InN0cmVldCI6IjE2MDAgUGVubnN5bHZhbmlhIEF2ZSBOVyIsImFkbWluQXJlYTYiOiJXYXNoaW5ndG9uIE1hbGwiLCJhZG1pbkFyZWE2VHlwZSI6Ik5laWdoYm9yaG9vZCIsImFkbWluQXJlYTUiOiJXYXNoaW5ndG9uIiwiYWRtaW5BcmVhNVR5cGUiOiJDaXR5IiwiYWRtaW5BcmVhNCI6IkRpc3RyaWN0IG9mIENvbHVtYmlhIiwiYWRtaW5BcmVhNFR5cGUiOiJDb3VudHkiLCJhZG1pbkFyZWEzIjoiREMiLCJhZG1pbkFyZWEzVHlwZSI6IlN0YXRlIiwiYWRtaW5BcmVhMSI6IlVTIiwiYWRtaW5BcmVhMVR5cGUiOiJDb3VudHJ5IiwicG9zdGFsQ29kZSI6IjIwNTAwLTAwMDUiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJQMUFBQSIsImdlb2NvZGVRdWFsaXR5IjoiQUREUkVTUyIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6IkwiLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozOC44OTc0LCJsbmciOi03Ny4wMzY1OX0sImRpc3BsYXlMYXRMbmciOnsibGF0IjozOC44OTc2OCwibG5nIjotNzcuMDM2NTV9LCJtYXBVcmwiOiIifV19XX0=
+  recorded_at: Wed, 09 Nov 2022 19:02:22 GMT
 recorded_with: VCR 6.1.0

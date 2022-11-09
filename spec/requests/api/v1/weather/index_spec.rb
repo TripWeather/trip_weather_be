@@ -6,13 +6,13 @@ RSpec.describe 'Weather API | Index' do
   describe 'Weather Index', :vcr do
     it 'render JSON of Weather Object for an addresses sent in query' do
 
-      address_params = ({
-        address: "12230 Washington Center Pkwy, Thornton, CO 80241",
-      })
+      address_params = {
+        address: "12230 Washington Center Pkwy, Thornton, CO 80241"
+      }
 
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      get '/api/v1/weather', headers: headers, params: JSON.generate(address_params)
+      get '/api/v1/weather', headers: headers, params: address_params
       expect(response).to be_successful
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 

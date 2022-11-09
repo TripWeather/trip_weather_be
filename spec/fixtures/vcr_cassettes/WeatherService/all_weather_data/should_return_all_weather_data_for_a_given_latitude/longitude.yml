@@ -27,26 +27,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - e6d1a8a6-528b-4e45-bb08-232e38b2b263
+      - a90884c3-6790-4812-9a0e-ac4d3674951c
       X-Correlation-Id:
-      - 11efcd0e
+      - 1651bec3
       X-Server-Id:
-      - vm-lnx-nids-apiapp1.ncep.noaa.gov
+      - vm-lnx-nids-apiapp5.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=1317, s-maxage=120
+      - public, max-age=85568, s-maxage=120
       Expires:
-      - Tue, 08 Nov 2022 21:25:07 GMT
+      - Thu, 10 Nov 2022 18:48:36 GMT
       Date:
-      - Tue, 08 Nov 2022 21:03:10 GMT
+      - Wed, 09 Nov 2022 19:02:28 GMT
       Content-Length:
       - '3096'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - 7de19db4
+      - a375f65b
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -146,5 +146,5 @@ http_interactions:
                 "radarStation": "KTWX"
             }
         }
-  recorded_at: Tue, 08 Nov 2022 21:03:10 GMT
+  recorded_at: Wed, 09 Nov 2022 19:02:28 GMT
 recorded_with: VCR 6.1.0

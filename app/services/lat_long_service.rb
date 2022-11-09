@@ -3,8 +3,8 @@
 class LatLongService
   def self.connection
     Faraday.new(
-      url: 'http://api.positionstack.com/v1/',
-      params: { access_key: ENV['LAT_LONG_API'] }
+      url: 'http://www.mapquestapi.com',
+      params: { key: ENV['NAV_API'] }
     )
   end
 
@@ -13,7 +13,8 @@ class LatLongService
   end
 
   def self.address_to_coord(address)
-    response = connection.get("forward?query=#{address}")
+    address = address.gsub(",", "")
+    response = connection.get("/geocoding/v1/address?location=#{address}")
     parse(response)
   end
 end
