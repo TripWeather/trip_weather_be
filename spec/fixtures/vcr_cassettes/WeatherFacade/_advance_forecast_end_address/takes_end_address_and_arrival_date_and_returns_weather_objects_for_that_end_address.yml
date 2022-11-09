@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 09 Nov 2022 19:02:25 GMT
+      - Wed, 09 Nov 2022 20:47:06 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -27,7 +27,7 @@ http_interactions:
       X-Powered-By:
       - Express
       X-Request-Id:
-      - 0c57d390-6061-11ed-b965-29e3e6632df4
+      - ac1ecf10-606f-11ed-b965-29e3e6632df4
       Access-Control-Allow-Origin:
       - "*"
       Etag:
@@ -43,7 +43,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJpbmZvIjp7InN0YXR1c2NvZGUiOjAsImNvcHlyaWdodCI6eyJ0ZXh0IjoiwqkgMjAyMiBNYXBRdWVzdCwgSW5jLiIsImltYWdlVXJsIjoiaHR0cDovL2FwaS5tcWNkbi5jb20vcmVzL21xbG9nby5naWYiLCJpbWFnZUFsdFRleHQiOiLCqSAyMDIyIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbXX0sIm9wdGlvbnMiOnsibWF4UmVzdWx0cyI6LTEsImlnbm9yZUxhdExuZ0lucHV0IjpmYWxzZX0sInJlc3VsdHMiOlt7InByb3ZpZGVkTG9jYXRpb24iOnsibG9jYXRpb24iOiIzMjEwIFlvdW5nZmllbGQgU3QgV2hlYXQgUmlkZ2UgQ08gODAwMzMifSwibG9jYXRpb25zIjpbeyJzdHJlZXQiOiIzMjEwIFlvdW5nZmllbGQgU3QiLCJhZG1pbkFyZWE2IjoiIiwiYWRtaW5BcmVhNlR5cGUiOiJOZWlnaGJvcmhvb2QiLCJhZG1pbkFyZWE1IjoiV2hlYXQgUmlkZ2UiLCJhZG1pbkFyZWE1VHlwZSI6IkNpdHkiLCJhZG1pbkFyZWE0IjoiSmVmZmVyc29uIiwiYWRtaW5BcmVhNFR5cGUiOiJDb3VudHkiLCJhZG1pbkFyZWEzIjoiQ08iLCJhZG1pbkFyZWEzVHlwZSI6IlN0YXRlIiwiYWRtaW5BcmVhMSI6IlVTIiwiYWRtaW5BcmVhMVR5cGUiOiJDb3VudHJ5IiwicG9zdGFsQ29kZSI6IjgwMDMzLTUyNDMiLCJnZW9jb2RlUXVhbGl0eUNvZGUiOiJQMUFBQSIsImdlb2NvZGVRdWFsaXR5IjoiQUREUkVTUyIsImRyYWdQb2ludCI6ZmFsc2UsInNpZGVPZlN0cmVldCI6IkwiLCJsaW5rSWQiOiIwIiwidW5rbm93bklucHV0IjoiIiwidHlwZSI6InMiLCJsYXRMbmciOnsibGF0IjozOS43NjIxMiwibG5nIjotMTA1LjE0MTgxfSwiZGlzcGxheUxhdExuZyI6eyJsYXQiOjM5Ljc2MjIsImxuZyI6LTEwNS4xNDE4MX0sIm1hcFVybCI6IiJ9XX1dfQ==
-  recorded_at: Wed, 09 Nov 2022 19:02:25 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:05 GMT
 - request:
     method: get
     uri: https://api.weather.gov/points/39.7621,-105.1418
@@ -80,17 +80,17 @@ http_interactions:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=85586, s-maxage=120
+      - public, max-age=79240, s-maxage=120
       Expires:
-      - Thu, 10 Nov 2022 18:48:51 GMT
+      - Thu, 10 Nov 2022 18:47:46 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:25 GMT
+      - Wed, 09 Nov 2022 20:47:06 GMT
       Content-Length:
       - '3080'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a375b001
+      - 2befa5b
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -190,7 +190,7 @@ http_interactions:
                 "radarStation": "KFTG"
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:25 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:05 GMT
 - request:
     method: get
     uri: https://api.weather.gov/gridpoints/BOU/57,62/forecast
@@ -218,26 +218,26 @@ http_interactions:
       Access-Control-Expose-Headers:
       - X-Correlation-Id, X-Request-Id, X-Server-Id
       X-Request-Id:
-      - 907626ad-5a28-4df6-81be-7be4ae7436bc
+      - ad47f430-025f-4d50-a1f3-638af2c8bc07
       X-Correlation-Id:
-      - 192eff85
+      - 196554ee
       X-Server-Id:
-      - vm-lnx-nids-apiapp5.ncep.noaa.gov
+      - vm-lnx-nids-apiapp12.ncep.noaa.gov
       Vary:
       - Accept,Feature-Flags,Accept-Language
       - Accept-Encoding
       Cache-Control:
-      - public, max-age=2777, s-maxage=3600
+      - public, max-age=1081, s-maxage=3600
       Expires:
-      - Wed, 09 Nov 2022 19:48:42 GMT
+      - Wed, 09 Nov 2022 21:05:07 GMT
       Date:
-      - Wed, 09 Nov 2022 19:02:25 GMT
+      - Wed, 09 Nov 2022 20:47:06 GMT
       Content-Length:
-      - '11553'
+      - '11547'
       Connection:
       - keep-alive
       X-Edge-Request-Id:
-      - a375b1c1
+      - 2befa69
       Strict-Transport-Security:
       - max-age=31536000 ; includeSubDomains ; preload
     body:
@@ -286,7 +286,7 @@ http_interactions:
                 "updated": "2022-11-09T17:22:44+00:00",
                 "units": "us",
                 "forecastGenerator": "BaselineForecastGenerator",
-                "generatedAt": "2022-11-09T18:48:52+00:00",
+                "generatedAt": "2022-11-09T20:05:39+00:00",
                 "updateTime": "2022-11-09T17:22:44+00:00",
                 "validTimes": "2022-11-09T11:00:00+00:00/P7DT17H",
                 "elevation": {
@@ -296,18 +296,18 @@ http_interactions:
                 "periods": [
                     {
                         "number": 1,
-                        "name": "Today",
-                        "startTime": "2022-11-09T11:00:00-07:00",
+                        "name": "This Afternoon",
+                        "startTime": "2022-11-09T13:00:00-07:00",
                         "endTime": "2022-11-09T18:00:00-07:00",
                         "isDaytime": true,
                         "temperature": 68,
                         "temperatureUnit": "F",
                         "temperatureTrend": "falling",
-                        "windSpeed": "10 to 17 mph",
+                        "windSpeed": "13 to 17 mph",
                         "windDirection": "WSW",
-                        "icon": "https://api.weather.gov/icons/land/day/few/rain,20?size=medium",
-                        "shortForecast": "Sunny then Slight Chance Light Rain",
-                        "detailedForecast": "A slight chance of rain after 5pm. Sunny. High near 68, with temperatures falling to around 58 in the afternoon. West southwest wind 10 to 17 mph, with gusts as high as 28 mph. Chance of precipitation is 20%."
+                        "icon": "https://api.weather.gov/icons/land/day/rain,20?size=medium",
+                        "shortForecast": "Slight Chance Light Rain",
+                        "detailedForecast": "A slight chance of rain after 5pm. Sunny. High near 68, with temperatures falling to around 58 in the afternoon. West southwest wind 13 to 17 mph, with gusts as high as 28 mph. Chance of precipitation is 20%."
                     },
                     {
                         "number": 2,
@@ -507,5 +507,5 @@ http_interactions:
                 ]
             }
         }
-  recorded_at: Wed, 09 Nov 2022 19:02:25 GMT
+  recorded_at: Wed, 09 Nov 2022 20:47:06 GMT
 recorded_with: VCR 6.1.0

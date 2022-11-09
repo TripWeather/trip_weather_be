@@ -2,9 +2,17 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Trips API | Show' do
+RSpec.describe 'Trips API | Show', :vcr do
   describe 'Trip Show' do
-    let!(:load_obj) { @trip = trip_initialize_has_many('1000', 1) }
+    # let!(:load_obj) { @trip = trip_initialize_has_many('1000', 1) }
+    before :each do
+      @trip = create(:trip)
+      @address1 = create(:address, location: "2303 Braun Ct, Golden CO 80401")
+      @address2 = create(:address, location: "200 E Colfax Ave, Denver, CO 80203")
+      @stop1 = create(:stop, trip_id: @trip.id, address_id: @address1.id, type_of_stop: 0)
+      @stop2 = create(:stop, trip_id: @trip.id, address_id: @address2.id, type_of_stop: 2)
+    end
+
     context('Happy Path') do
       it 'all :uid associated trip values are correct types' do
         get api_v1_trip_path('1000', @trip.id)
