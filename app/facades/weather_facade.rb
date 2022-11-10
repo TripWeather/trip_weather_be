@@ -3,7 +3,6 @@
 class WeatherFacade < WeatherService
   def self.forecast(latitude, longitude)
     forecast_response = forecast_data(latitude, longitude)
-    # require 'pry'; binding.pry
     weather_attr_hash = forecast_response[:properties][:periods][0].slice(:name, :temperature, :shortForecast, :detailedForecast)
     Weather.new(weather_attr_hash)
   end
