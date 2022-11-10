@@ -33,7 +33,6 @@ RSpec.describe 'Navigation Facade', :vcr do
 
     it 'takes get_directions array, and trip details hash, and returns a Nav object with the directions and details' do
       object = NavFacade.nav_object(start_address, end_address)
-      # require 'pry'; binding.pry
       expect(object).to be_a(Nav)
     end
   end
