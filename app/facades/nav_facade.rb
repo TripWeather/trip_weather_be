@@ -3,15 +3,16 @@
 class NavFacade < NavService
   def self.get_directions(start_address, end_address)
     route = route_directions(start_address, end_address)[:route][:legs][0][:maneuvers]
-
     all_directions = []
     turn_distances = []
+    lat_lng_per_step = []
 
     route.each do |step|
       all_directions << step[:narrative]
       turn_distances << step[:distance]
+      lat_lng_per_step << step[:startPoint]
     end
-    all_directions.zip(turn_distances)
+    all_directions.zip(turn_distances, lat_lng_per_step)
   end
 
   def self.trip_details(start_address, end_address)
